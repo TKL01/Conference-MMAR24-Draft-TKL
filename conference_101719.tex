@@ -156,9 +156,12 @@ In the backend, a route is defined in the Flask web application that listens for
 \subsubsection{Visualizing the data from the database}
 The SoC for the battery is visualized using Plotly.js as a line chart. This process involves several steps. Initially, data is fetched from the backend database. After processing to ensure compatibility with Plotly.js, it is prepared for visualization. The resulting line diagram represents the battery SoC over a certain time span. Flask facilitates the transfer of Python variables to the frontend. 
 These variables are utilized within HTML templates or JavaScript via Jinja2, a template engine. Users can interact with the system by selecting specific days from a drop-down list. The recorded data corresponding to the chosen day is displayed.
-\subsubsection{Visualizing the data from the database}
+\subsubsection{Connecting to a Open Platform Communications Unified Architecture}
+A pre-existing DataConnector (DC) has been specifically developed for the Husky as part of a prior project. This DC leverages the Open Platform Communication Unified Architecture (OPC-UA) standard. Through this connector, the ROS data from the Husky can be efficiently retrieved. The retrieval process is facilitated by a client program integrated into the web application and the acquired data is persistently stored in the database. 
+In the event of an OPC-UA server failure, the system is designed continue displaying the real-time ROS data of the Husky similarly to ... .
 
 \section{Validation and Showcase}
+
 \subsection{Test}
 
 
