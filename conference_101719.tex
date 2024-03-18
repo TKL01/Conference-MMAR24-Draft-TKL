@@ -97,15 +97,8 @@ C. Crick et al.
 \item s
 \end{itemize}
 
-\subsection{Maintaining the Integrity of the Specifications}
-
-The IEEEtran class file is used to format your paper and style the text. All margins, 
-column widths, line spaces, and text fonts are prescribed; please do not 
-alter them. You may note peculiarities. For example, the head margin
-measures proportionately more than is customary. This measurement 
-and others are deliberate, using specifications that anticipate your paper 
-as one part of the entire proceedings, and not as an independent document. 
-Please do not revise any of the current designations.
+\subsection{placeholder}
+placeholder
 
 \section{Implementation and Design}
 The system architecture of the web application can be dichotomized into distinct backend and frontend components. These components synergistically leverage an array of tools and frameworks to facilitate seamless operation.
@@ -113,10 +106,11 @@ The system architecture of the web application can be dichotomized into distinct
 The web application is a Flask application. Flask is a micro web framework that is characterized by providing the core features to create a python web based application. 
 Flask is also very flexible and highly expandable \cite{flasksqlite}. The following tools are used in the backend:
 \begin{itemize}
-\item SQLAlchemy is a Python SQL toolkit and can be integrated into Flask as an extension. SQLAlchemy allows users to link Python objects to SQL databases using Object-Relational Mapping (ORM). This allows, for example, database queries to be made using Python code instead of SQL commands. The extension is also database-agnostic. Python code can be used unchanged for various SQL-based databases, such as SQLite, PostgreSQL or MySQL. 
+\item SQLAlchemy is a Python SQL toolkit and can be integrated into Flask as an extension. SQLAlchemy allows users to link Python objects to SQL databases using Object-Relational Mapping (ORM). This allows, for example, database queries to be made using Python code instead of SQL commands. The extension is also database-agnostic. 
+Python code can be used unchanged for various SQL-based databases, such as SQLite, PostgreSQL or MySQL. 
 SQLite3 is used as a database to store ROS and user data. SQLite3 is a serverless database. This characteristic renders it operable in a self-contained manner, devoid of any supplementary software dependencies or intricate configuration settings. Consequently, it exhibits resource efficiency by minimizing the utilization of extraneous computational resources.
 \item The Roslibjs JavaScript library and the Rosbridge v2.0 protocol are used to establish bidirectional communication with the robots and the web application. The Rosbridge server it contains, provides a WebSocket connection so that web browsers can communicate with Rosbridge.
-Roslibjs is employed as a JavaScript library to interact with ROS (Robot Operating System) topics, enabling the subscription to and publication of these topics. A quintessential example of this interaction is the publication of a geometry\_msgs/Twist message on the /cmd\_vel topic of the Husky robot, which initiates its movement.
+Roslibjs is employed as a JavaScript library to interact with ROS topics, enabling the subscription to and publication of these topics. A quintessential example of this interaction is the publication of a geometry\_msgs/Twist message on the /cmd\_vel topic of the Husky robot, which initiates its movement.
 The geometry\_msgs/Twist message is composed of linear and angular vectors, which represent the velocity in free space. Specifically, these vectors are expressed in terms of m/s and rad/s, respectively, in a right-handed coordinate system.
 In the context of the Husky robot, a linear velocity of 1 m/s in the positive x-direction corresponds to forward movement at a speed of 1 m/s. To induce rotational movement, an angular velocity is specified in the z-direction. Positive and negative values correspond to counterclockwise and clockwise rotations, respectively.
 \item The Web Video Server is a ROS package that allows HTTP streaming of ROS image topics. This integrates the live image from a Zed 2i camera from StereoLabs into the web interface.
