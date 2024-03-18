@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.14)  14 MAR 2024 18:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.14)  18 MAR 2024 02:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -259,23 +259,30 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-<Pictures/Husky_clearpath.png, id=1, 399.4925pt x 259.97125pt>
-File: Pictures/Husky_clearpath.png Graphic file (type png)
-<use Pictures/Husky_clearpath.png>
-Package pdftex.def Info: Pictures/Husky_clearpath.png  used on input line 83.
-(pdftex.def)             Requested size: 253.22934pt x 164.79033pt.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 112.
+<Pictures/husky_costum.jpeg, id=1, 963.6pt x 1284.8pt>
+File: Pictures/husky_costum.jpeg Graphic file (type jpg)
+<use Pictures/husky_costum.jpeg>
+Package pdftex.def Info: Pictures/husky_costum.jpeg  used on input line 82.
+(pdftex.def)             Requested size: 253.22934pt x 337.62773pt.
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+
+ <./Pictures/husky_costum.jpeg>]
+LaTeX Font Info:    Trying to load font information for U+msa on input line 95.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 112.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 95.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-
-
- <./Pictures/Husky_clearpath.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 136--141
+)
+<Pictures/userapp.png, id=11, 1129.21875pt x 730.73pt>
+File: Pictures/userapp.png Graphic file (type png)
+<use Pictures/userapp.png>
+Package pdftex.def Info: Pictures/userapp.png  used on input line 126.
+(pdftex.def)             Requested size: 253.22934pt x 163.8608pt.
+ [2 <./Pictures/userapp.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 152--157
 []\OT1/ptm/m/n/8 \clearpathrobotics.com," 2024. [On-line]. Avail-able:
  []
 
@@ -290,22 +297,22 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[2
+[3
 
 ] (./conference_101719.aux) ) 
 Here is how much of TeX's memory you used:
- 4121 strings out of 480121
- 64373 string characters out of 5892160
- 364984 words of memory out of 5000000
- 22063 multiletter control sequences out of 15000+600000
+ 4132 strings out of 480121
+ 64572 string characters out of 5892160
+ 364995 words of memory out of 5000000
+ 22072 multiletter control sequences out of 15000+600000
  501461 words of font info for 85 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 55i,8n,62p,416b,266s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,8n,62p,548b,266s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (2 pages, 141812 bytes).
+Output written on conference_101719.pdf (3 pages, 353031 bytes).
 PDF statistics:
- 40 PDF objects out of 1000 (max. 8388607)
- 23 compressed objects within 1 object stream
+ 44 PDF objects out of 1000 (max. 8388607)
+ 25 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

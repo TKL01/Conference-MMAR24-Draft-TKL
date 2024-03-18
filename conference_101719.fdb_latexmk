@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1710438803 "/home/tkl/conference-mmar24-draft-TKL/Conference-MMAR24-Draft-TKL/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1710438803
+["pdflatex"] 1710725751 "/home/tkl/conference-mmar24-draft-TKL/Conference-MMAR24-Draft-TKL/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1710725752
   "/etc/texmf/web2c/texmf.cnf" 1709736642 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/tkl/conference-mmar24-draft-TKL/Conference-MMAR24-Draft-TKL/conference_101719.tex" 1710438803 6898 8df0c46fe2d2f8babaa26ee670cedc17 ""
+  "/home/tkl/conference-mmar24-draft-TKL/Conference-MMAR24-Draft-TKL/conference_101719.tex" 1710725751 11445 f1d8a3cd1d87a0300ab9853527c9ea48 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -61,9 +61,10 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1710337261 165012 f177baa1c39a3ebd62c3096a43521a0d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1710429084 1879871 d97401cad6cc0cdbb20515f6e75e398a ""
   "IEEEtran.cls" 1440632924 288304 b67b6fc6c2abb39f9b461923f5199343 ""
-  "Pictures/Husky_clearpath.png" 1710353009 67256 536de74e699041707195db03f1f0d713 ""
-  "conference_101719.aux" 1710438803 1521 38628b2ad7590e1654f8ff41b147b39a "pdflatex"
-  "conference_101719.tex" 1710438803 6898 8df0c46fe2d2f8babaa26ee670cedc17 ""
+  "Pictures/husky_costum.jpeg" 1710714094 206652 310a94a0b407730e3fe80414d5d8e1a8 ""
+  "Pictures/userapp.png" 1710720705 118775 94545eb858b70e8f6362ed4548c8527e ""
+  "conference_101719.aux" 1710725752 1700 ee28a0ce5f947d0364898e664f20fbb5 "pdflatex"
+  "conference_101719.tex" 1710725751 11445 f1d8a3cd1d87a0300ab9853527c9ea48 ""
   (generated)
   "conference_101719.aux"
   "conference_101719.log"

@@ -72,26 +72,30 @@ kaigom@fb2.fra-uas.de}
 \end{IEEEkeywords}
 
 \section{Introduction}
-The Robot Operating System (ROS) is one of the most popular pieces of robot middleware when it comes to creating a basis for robots and creating robot applications \cite{rosOrg}. 
-Nevertheless, it is a challenge for people with little or no knowledge of robot software to familiarize themselves with this software. 
-Especially people who are dependent on the help of robots should have intuitive access to these robots.
-With this in mind, a web application was developed that is as platform-independent as possible. 
-This web application enables users to monitor and control the robot located in the local network. 
-Furthermore, relevant data such as the battery status and the temperatures of the motors are visualised. 
-The application can also be accessed by any device with web browser support.
+The Robot Operating System (ROS) stands as a ubiquitous middleware framework in the realm of robotics, serving as a foundational platform for constructing robot systems and developing robot applications. 
+However, for individuals possessing limited or no prior exposure to robot software, navigating the intricacies of ROS can prove challenging. 
+This challenge is particularly pronounced for users who rely on robotic assistance and require an intuitive means of interacting with these machines.
+In response to this need, a platform-independent web application was meticulously crafted. 
+Designed with accessibility in mind, this application facilitates seamless monitoring and control of locally networked robots. Users gain access to critical information, including battery status and motor temperatures, all presented through an intuitive web interface. 
+Notably, this application is compatible with any device supporting web browsers, ensuring widespread accessibility and usability.
 \begin{figure}[htbp]
-    \centerline{\includegraphics[width=8.9cm]{Pictures/Husky_clearpath.png}}
+    \centerline{\includegraphics[width=8.9cm]{Pictures/husky_costum.jpeg}}
     \caption{Picture of the Husky UGV by Clearpath}
     \label{fig:huskyClearpath}
 \end{figure} 
-The robot we use is the Husky Unmanned Ground Vehicle (UGV) from Clearpath, which is a medium-sized mobile robotics platform as shown in Fig. \ref{fig:huskyClearpath}.
-With a maximum payload of 75 kg, other robots, peripherals and tools, for example, can be transported or mounted on it \cite{huskyClearpath}. 
+The robotic platform employed in our research is the Husky Unmanned Ground Vehicle (UGV), manufactured by Clearpath Robotics. This medium-sized mobile robot, depicted in Fig. \ref{fig:huskyClearpath}, operates on the ROS2 distribution Humble Hawksbill.
+The Husky UGV boasts a substantial maximum payload capacity of 75 kg, rendering it suitable for transporting and accommodating various auxiliary components. Researchers can mount additional robots, peripherals, and specialized tools on this versatile platform. Its robust design and adaptability make it an ideal choice for a wide range of robotic applications\cite{huskyClearpath}. 
 
 
 
 
 \section{State of the Art}
 C. Crick et al.  
+\begin{itemize}
+\item r
+\item teams
+\item s
+\end{itemize}
 
 \subsection{Maintaining the Integrity of the Specifications}
 
@@ -104,18 +108,30 @@ as one part of the entire proceedings, and not as an independent document.
 Please do not revise any of the current designations.
 
 \section{Implementation and Design}
-The system architecture of the web application can be divided into a backend and a frontend, whereby various tools and frameworks are used.
+The system architecture of the web application can be dichotomized into distinct backend and frontend components. These components synergistically leverage an array of tools and frameworks to facilitate seamless operation.
 \subsection{Backend}
 The web application is a Flask application. Flask is a micro web framework that is characterized by providing the core features to create a python web based application. 
-Therefore, Flask is very flexible and also highly extensible \cite{flasksqlite}.
+Flask is also very flexible and highly expandable \cite{flasksqlite}. The following tools are used in the backend:
 \begin{itemize}
-\item Test
-\item DDS
-\item standard
-\item teams
-\item 
+\item SQLAlchemy is a Python SQL toolkit and can be integrated into Flask as an extension. SQLAlchemy allows users to link Python objects to SQL databases using Object-Relational Mapping (ORM). This allows, for example, database queries to be made using Python code instead of SQL commands. The extension is also database-agnostic. Python code can be used unchanged for various SQL-based databases, such as SQLite, PostgreSQL or MySQL. 
+SQLite3 is used as a database to store ROS and user data. SQLite3 is a serverless database. This characteristic renders it operable in a self-contained manner, devoid of any supplementary software dependencies or intricate configuration settings. Consequently, it exhibits resource efficiency by minimizing the utilization of extraneous computational resources.
+\item The Roslibjs JavaScript library and the Rosbridge v2.0 protocol are used to establish bidirectional communication with the robots and the web application. The Rosbridge server it contains, provides a WebSocket connection so that web browsers can communicate with Rosbridge.
+Roslibjs is employed as a JavaScript library to interact with ROS (Robot Operating System) topics, enabling the subscription to and publication of these topics. A quintessential example of this interaction is the publication of a geometry\_msgs/Twist message on the /cmd\_vel topic of the Husky robot, which initiates its movement.
+The geometry\_msgs/Twist message is composed of linear and angular vectors, which represent the velocity in free space. Specifically, these vectors are expressed in terms of m/s and rad/s, respectively, in a right-handed coordinate system.
+In the context of the Husky robot, a linear velocity of 1 m/s in the positive x-direction corresponds to forward movement at a speed of 1 m/s. To induce rotational movement, an angular velocity is specified in the z-direction. Positive and negative values correspond to counterclockwise and clockwise rotations, respectively.
+\item The Web Video Server is a ROS package that allows HTTP streaming of ROS image topics. This integrates the live image from a Zed 2i camera from StereoLabs into the web interface.
+\item Flask-Login and Werkzeug.security extensions are used to handle login, logout, and session functions, as well as to enhance user password security through password hashing.
 \end{itemize}
-
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=8.9cm]{Pictures/userapp.png}}
+    \caption{Backend architecture of the web app}
+    \label{fig:userapp}
+\end{figure}
+Fig. \ref{fig:userapp} illustrates the backend architecture and the method by which users can interface with the Husky robot via the web application. This system is designed to operate on any device equipped with a web browser, utilizing the IP address of the Husky's onboard computer for connectivity.
+The user interface provides real-time access to a stream of visual data from a Zed 2i camera, as well as control options for the robot. Additionally, it displays current ROS data, including metrics such as the battery state of charge (soc) and motor temperatures.
+A key feature of this system is its ability to track and store historical data in the SQLite3 database. This allows for longitudinal analysis of the robot's operational data, which can be instrumental in performance optimization and troubleshooting.
+This system provides a flexible and accessible platform for robot control and data monitoring. It underscores the potential of web-based interfaces in enhancing the usability and functionality of robotic systems. 
+The use of an IP-based connection protocol further emphasizes the system's adaptability and broad accessibility. The incorporation of a database for data tracking and storage demonstrates a commitment to data-driven decision making and performance optimization. 
 \subsection{Frontend}
 
 
@@ -142,8 +158,11 @@ https://clearpathrobotics.com/husky-unmanned-ground-vehicle-robot/
 for non-ros users,'' in Robotics Research, Springer, 2017, pp. 493--504.
 \bibitem{flasksqlite} Suraya, Muhammad Sholeh, ``Designing and Implementing a Database for Thesis Data,'' in International Journal of Engineering, Science \& InformationTechnology (IJESTY)
 Volume 2, No. 1, 2022, pp. 9--14, eISSN: 2775-2674
-
-
+\bibitem{rosbridgeSuite}“ros.org,” 
+2024.
+[Online]. 
+Available:
+http://wiki.ros.org/rosbridge\_suite
 \end{thebibliography}
 \vspace{12pt}
 \color{red}
