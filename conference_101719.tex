@@ -127,9 +127,23 @@ A key feature of this system is its ability to track and store historical data i
 This system provides a flexible and accessible platform for robot control and data monitoring. It underscores the potential of web-based interfaces in enhancing the usability and functionality of robotic systems. 
 The use of an IP-based connection protocol further emphasizes the system's adaptability and broad accessibility. The incorporation of a database for data tracking and storage demonstrates a commitment to data-driven decision making and performance optimization. 
 \subsection{Frontend}
+The primary objective of the front-end design is to enhance user-friendliness through visually intuitive elements. Additionally, the application aims for robust platform independence, ensuring that users are not constrained by specific devices when accessing the web user interface. 
+To achieve this, the web application is meticulously crafted to be compatible with a wide range of devices, including desktop PCs and mobile platforms. 
+\begin{itemize}
+\item Leveraging the free and open-source CSS framework Bootstrap version 4.6, we optimize responsiveness and seamlessly integrate with prevailing web standards such as HTML5, CSS3, and JavaScript. 
+In the context of Bootstrap, the layout structure is organized using the grid system, for arranging elements within a web page. 
+Additionally, a navigation bar is crafted to reinforce user navigation.
+Furthermore, the implementation of a battery display is achieved through the utilization of the Bootstrap class .progress-bar. 
+This class enables precise control over visual representations of battery levels or other progress indicators.
+\item Plotly.js, an open-source graphing library, serves as a powerful tool for constructing interactive and touch-enabled visualizations. It facilitates the creation of dynamic plots that allow users to zoom in and out, as well as capture screenshots of relevant data.
+\item The Husky is supplied with a physical controller as standard. Teleoperation is achieved through the utilization of an analog joystick and the left and right shoulder buttons to set a specific maximum velocity.
+To extend this functionality to the web interface, Nipple.js is employed. This library empowers the configuration and display of a virtual joystick. Additionally, a horizontally scrollable velocity slider is created using the Bootstrap class .form-control-range to set the maximum speed.
+\item The app exhibits versatility in its control mechanisms. Users have the option to teleoperate the robot via a physical keyboard, provided they have one readily available. For users lacking a physical keyboard connection, an alternative method involves utilizing the “WASD” touch keys displayed within the application interface. 
+These touch keys can also be used for the robot movement. The Huksy can be driven more precisely using the keyboard buttons. This can be useful when parking, for instance.
+\end{itemize}
 
 
-\subsection{Equations}
+\subsection{Examples backend and frontend}
 
 \subsection{\LaTeX-Specific Advice}
 
