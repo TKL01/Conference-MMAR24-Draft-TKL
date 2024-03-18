@@ -72,7 +72,7 @@ kaigom@fb2.fra-uas.de}
 \end{IEEEkeywords}
 
 \section{Introduction}
-The Robot Operating System (ROS) stands as a ubiquitous middleware framework in the realm of robotics, serving as a foundational platform for constructing robot systems and developing robot applications. 
+The Robot Operating System (ROS) stands as a ubiquitous middleware framework in the realm of robotics serving as a foundational platform for constructing robot systems and developing robot applications. 
 However, for individuals possessing limited or no prior exposure to robot software, navigating the intricacies of ROS can prove challenging. 
 This challenge is particularly pronounced for users who rely on robotic assistance and require an intuitive means of interacting with these machines.
 In response to this need, a platform-independent web application was meticulously crafted. 
@@ -83,7 +83,7 @@ Notably, this application is compatible with any device supporting web browsers,
     \caption{Picture of the Husky UGV by Clearpath}
     \label{fig:huskyClearpath}
 \end{figure} 
-The robotic platform employed in our research is the Husky Unmanned Ground Vehicle (UGV), manufactured by Clearpath Robotics. This medium-sized mobile robot, depicted in Fig. \ref{fig:huskyClearpath}, operates on the ROS2 distribution Humble Hawksbill.
+The robotic platform employed in our research is the Husky Unmanned Ground Vehicle (UGV) manufactured by Clearpath Robotics. This medium-sized mobile robot, depicted in Fig. \ref{fig:huskyClearpath}, operates on the ROS2 distribution Humble Hawksbill.
 The Husky UGV boasts a substantial maximum payload capacity of 75 kg, rendering it suitable for transporting and accommodating various auxiliary components. Researchers can mount additional robots, peripherals, and specialized tools on this versatile platform. Its robust design and adaptability make it an ideal choice for a wide range of robotic applications\cite{huskyClearpath}. 
 
 
@@ -107,14 +107,14 @@ The web application is a Flask application. Flask is a micro web framework that 
 Flask is also very flexible and highly expandable \cite{flasksqlite}. The following tools are used in the backend:
 \begin{itemize}
 \item SQLAlchemy is a Python SQL toolkit and can be integrated into Flask as an extension. SQLAlchemy allows users to link Python objects to SQL databases using Object-Relational Mapping (ORM). This allows, for example, database queries to be made using Python code instead of SQL commands. The extension is also database-agnostic. 
-Python code can be used unchanged for various SQL-based databases, such as SQLite, PostgreSQL or MySQL. 
+Python code can be used unchanged for various SQL-based databases such as SQLite, PostgreSQL or MySQL. 
 SQLite3 is used as a database to store ROS and user data. SQLite3 is a serverless database. This characteristic renders it operable in a self-contained manner, devoid of any supplementary software dependencies or intricate configuration settings. Consequently, it exhibits resource efficiency by minimizing the utilization of extraneous computational resources.
 \item The Roslibjs JavaScript library and the Rosbridge v2.0 protocol are used to establish bidirectional communication with the robots and the web application. The Rosbridge server it contains, provides a WebSocket connection so that web browsers can communicate with Rosbridge.
-Roslibjs is employed as a JavaScript library to interact with ROS topics, enabling the subscription to and publication of these topics. A quintessential example of this interaction is the publication of a geometry\_msgs/Twist message on the /cmd\_vel topic of the Husky robot, which initiates its movement.
+Roslibjs is employed as a JavaScript library to interact with ROS topics, enabling the subscription to and publication of these topics. A quintessential example of this interaction is the publication of a geometry\_msgs/Twist message on the /cmd\_vel topic of the Husky robot which initiates its movement.
 The geometry\_msgs/Twist message is composed of linear and angular vectors, which represent the velocity in free space. Specifically, these vectors are expressed in terms of m/s and rad/s, respectively, in a right-handed coordinate system.
-In the context of the Husky robot, a linear velocity of 1 m/s in the positive x-direction corresponds to forward movement at a speed of 1 m/s. To induce rotational movement, an angular velocity is specified in the z-direction. Positive and negative values correspond to counterclockwise and clockwise rotations, respectively.
+In the context of the Husky robot, a linear velocity of 1 m/s in the positive x-direction corresponds to forward movement at a speed of 1 m/s. To induce rotational movement, an angular velocity is specified in the z-direction. Positive and negative values correspond to counterclockwise and clockwise rotations respectively.
 \item The Web Video Server is a ROS package that allows HTTP streaming of ROS image topics. This integrates the live image from a Zed 2i camera from StereoLabs into the web interface.
-\item Flask-Login and Werkzeug.security extensions are used to handle login, logout, and session functions, as well as to enhance user password security through password hashing. Additionally, it is possible to register new user accounts and assign permissions/priorities via...
+\item Flask-Login and Werkzeug.security extensions are used to handle login, logout, and session functions as well as to enhance user password security through password hashing. Additionally, it is possible to register new user accounts and assign permissions/priorities via...
 \end{itemize}
 \begin{figure}[htbp]
     \centerline{\includegraphics[width=8.9cm]{Pictures/userapp.pdf}}
@@ -122,33 +122,33 @@ In the context of the Husky robot, a linear velocity of 1 m/s in the positive x-
     \label{fig:userapp}
 \end{figure}
 Fig. \ref{fig:userapp} illustrates the backend architecture and the method by which users can interface with the Husky robot via the web application. This system is designed to operate on any device equipped with a web browser, utilizing the IP address of the Husky's onboard computer for connectivity.
-The user interface provides real-time access to a stream of visual data from a Zed 2i camera, as well as control options for the robot. Additionally, it displays current ROS data, including metrics such as the battery State of Charge (SoC) and motor temperatures.
+The user interface provides real-time access to a stream of visual data from a Zed 2i camera as well as control options for the robot. Additionally, it displays current ROS data, including metrics such as the battery State of Charge (SoC) and motor temperatures.
 A key feature of this system is its ability to track and store historical data in the SQLite3 database. This allows for longitudinal analysis of the robot's operational data, which can be instrumental in performance optimization and troubleshooting.
 This system provides a flexible and accessible platform for robot control and data monitoring. It underscores the potential of web-based interfaces in enhancing the usability and functionality of robotic systems. 
 The use of an IP-based connection protocol further emphasizes the system's adaptability and broad accessibility. The incorporation of a database for data tracking and storage demonstrates a commitment to data-driven decision making and performance optimization. 
 \subsection{Frontend}
 The primary objective of the front-end design is to enhance user-friendliness through visually intuitive elements. Additionally, the application aims for robust platform independence, ensuring that users are not constrained by specific devices when accessing the web user interface. 
-To achieve this, the web application is meticulously crafted to be compatible with a wide range of devices, including desktop PCs and mobile platforms. 
+To achieve this, the web application is meticulously crafted to be compatible with a wide range of devices including desktop PCs and mobile platforms. 
 \begin{itemize}
 \item Leveraging the free and open-source CSS framework Bootstrap version 4.6, we optimize responsiveness and seamlessly integrate with prevailing web standards such as HTML5, CSS3, and JavaScript. 
-In the context of Bootstrap, the layout structure is organized using the grid system, for arranging elements within a web page. 
+In the context of Bootstrap, the layout structure is organized using the grid system for arranging elements within a web page. 
 Additionally, a navigation bar is crafted to reinforce user navigation.
 Furthermore, the implementation of a battery display is achieved through the utilization of the Bootstrap class .progress-bar. 
 This class enables precise control over visual representations of battery levels or other progress indicators.
-\item Plotly.js, an open-source graphing library, serves as a powerful tool for constructing interactive and touch-enabled visualizations. It facilitates the creation of dynamic plots that allow users to zoom in and out, as well as capture screenshots of relevant data.
+\item Plotly.js, an open-source graphing library serves as a powerful tool for constructing interactive and touch-enabled visualizations. It facilitates the creation of dynamic plots that allow users to zoom in and out as well as capture screenshots of relevant data.
 \item The Husky is supplied with a physical controller as standard. Teleoperation is achieved through the utilization of an analog joystick and the left and right shoulder buttons to set a specific maximum velocity.
 To extend this functionality to the web interface, Nipple.js is employed. This library empowers the configuration and display of a virtual joystick. Additionally, a horizontally scrollable velocity slider is created using the Bootstrap class .form-control-range to set a desired maximum speed.
 \item The app exhibits versatility in its control mechanisms. Users have the option to teleoperate the robot via a physical keyboard, provided they have one readily available. For users lacking a physical keyboard connection, an alternative method involves utilizing the “WASD” touch keys displayed within the application interface. 
-These touch keys can also be used for the robot movement. The Huksy can be driven more precisely using the keyboard buttons. This can be useful when parking, for instance.
-\item Three.js, a powerful and lightweight 3D graphics library, that can be served as a versatile tool for rendering digital representations of robots within web browsers. In combination with Ros3djs, a digital twin can be created in the browser that mirrors the physical movements of the real robot. Animations can also be added. For example, a blinking or lighting up of the visualized husky in the browser when the battery SoC is low. 
-As an ongoing project, we have successfully integrated a 3D model of the husky into our application as a proof of concept.
+These touch keys can also be used for the robot movement. The Husky can be driven more precisely using the keyboard buttons. This can be useful when parking, for instance.
+\item Three.js is a powerful and lightweight 3D graphics library that can be served as a versatile tool for rendering digital representations of robots within web browsers. In combination with Ros3djs, a digital twin can be created in the browser that mirrors the physical movements of the real robot. Animations can also be added. For example, a blinking or lighting up of the visualized husky in the browser when the battery SoC is low. 
+As an ongoing project, we have successfully integrated a 3D model of the Husky into our application as a proof of concept.
 \end{itemize}
 placeholder text
 
 \subsection{Interaction between backend and frontend}
 The battery state of charge is used as an example to explain the data flow between the backend and frontend. 
 \subsubsection{Direct display of the battery SoC}
-The current value of the battery, which is published by the ROS topic /battery\_percentage, is visualized directly in the user interface with Bootstrap each time the message is received. For this purpose, a ROSLIB.topic object is created beforehand in JavaScript that subscribes to the corresponding ROS topic, allowing real-time updates. It is also possible to send messages to this topic, as is the case with the Husky controller. 
+The current value of the battery which is published by the ROS topic /battery\_percentage, is visualized directly in the user interface with Bootstrap each time the message is received. For this purpose, a ROSLIB.topic object is created beforehand in JavaScript that subscribes to the corresponding ROS topic, allowing real-time updates. It is also possible to send messages to this topic, as is the case with the Husky controller. 
 In this case, the virtual joystick position sends a twist message to the /cmd\_vel topic to move it. 
 The connection between the app and the Husky is established via the WebSocket. 
 \subsubsection{Capturing the values}
