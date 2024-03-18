@@ -161,6 +161,20 @@ A pre-existing DataConnector (DC) has been specifically developed for the Husky 
 In the event of an OPC-UA server failure, the system is designed continue displaying the real-time ROS data of the Husky similarly to ... .
 
 \section{Validation and Showcase}
+To test the responsiveness of the front end of the web application, the app was accessed from different devices. The Flask application can run on the Husky's onboard PC or on another PC in the same local network as the Husky with access to the ROS topics. The application was mainly tested on the mobile onboard PC (i5-1135G7 CPU and 16 GB RAM) to serve the locally stored files to the client.
+The representation of the data page is shown in Fig. 3. 
+In this controlled experiment we investigate the visual representation of a web application interface across two distinct devices: a Samsung Galaxy S10 mobile phone and on a full HD monitor. The purpose is to discern how design elements and user experience differ between these platforms.
+On the left hand side the /data page was accessed using a Samsung Galaxy S10 mobile phone while on the right hand side the site was displayed on a full HD monitor.
+Embedded within the navigation bar is a real-time indicator of the battery SoC. This value is updated dynamically as the Husky operates.
+Additionally, a status display reflects the active WebSocket connection, providing essential feedback to the user.
+These elements were crafted using the Bootstrap framework. The current motor temperatures are visualized using angular gauge charts. These succinct representations allow rapid assessment of temperature levels.
+Below that, the motor temperature data are plotted as line charts. Both visualizations were generated using Plotlyjs.
+Positioned at the bottom left corner, a similar display exists for the battery Soc. Due to space constraints only a truncated version is visible on the full HD monitor.
+On the Galaxy S10, the navigation bar undergoes compression, resulting in a more compact layout.
+A convenient drop-down menu arrangement allows users to access elements sequentially by scrolling vertically.
+% By examining these nuances, we contribute to the ongoing discourse on responsive web design and optimal user experiences across diverse platforms.
+
+
 
 \subsection{Test}
 
