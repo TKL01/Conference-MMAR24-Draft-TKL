@@ -122,7 +122,7 @@ In the context of the Husky robot, a linear velocity of 1 m/s in the positive x-
     \label{fig:userapp}
 \end{figure}
 Fig. \ref{fig:userapp} illustrates the backend architecture and the method by which users can interface with the Husky robot via the web application. This system is designed to operate on any device equipped with a web browser, utilizing the IP address of the Husky's onboard computer for connectivity.
-The user interface provides real-time access to a stream of visual data from a Zed 2i camera, as well as control options for the robot. Additionally, it displays current ROS data, including metrics such as the battery state of charge (soc) and motor temperatures.
+The user interface provides real-time access to a stream of visual data from a Zed 2i camera, as well as control options for the robot. Additionally, it displays current ROS data, including metrics such as the battery State of Charge (SoC) and motor temperatures.
 A key feature of this system is its ability to track and store historical data in the SQLite3 database. This allows for longitudinal analysis of the robot's operational data, which can be instrumental in performance optimization and troubleshooting.
 This system provides a flexible and accessible platform for robot control and data monitoring. It underscores the potential of web-based interfaces in enhancing the usability and functionality of robotic systems. 
 The use of an IP-based connection protocol further emphasizes the system's adaptability and broad accessibility. The incorporation of a database for data tracking and storage demonstrates a commitment to data-driven decision making and performance optimization. 
@@ -137,20 +137,33 @@ Furthermore, the implementation of a battery display is achieved through the uti
 This class enables precise control over visual representations of battery levels or other progress indicators.
 \item Plotly.js, an open-source graphing library, serves as a powerful tool for constructing interactive and touch-enabled visualizations. It facilitates the creation of dynamic plots that allow users to zoom in and out, as well as capture screenshots of relevant data.
 \item The Husky is supplied with a physical controller as standard. Teleoperation is achieved through the utilization of an analog joystick and the left and right shoulder buttons to set a specific maximum velocity.
-To extend this functionality to the web interface, Nipple.js is employed. This library empowers the configuration and display of a virtual joystick. Additionally, a horizontally scrollable velocity slider is created using the Bootstrap class .form-control-range to set the maximum speed.
+To extend this functionality to the web interface, Nipple.js is employed. This library empowers the configuration and display of a virtual joystick. Additionally, a horizontally scrollable velocity slider is created using the Bootstrap class .form-control-range to set a desired maximum speed.
 \item The app exhibits versatility in its control mechanisms. Users have the option to teleoperate the robot via a physical keyboard, provided they have one readily available. For users lacking a physical keyboard connection, an alternative method involves utilizing the “WASD” touch keys displayed within the application interface. 
 These touch keys can also be used for the robot movement. The Huksy can be driven more precisely using the keyboard buttons. This can be useful when parking, for instance.
-\item Three.js
+\item Three.js, a powerful and lightweight 3D graphics library, that can be served as a versatile tool for rendering digital representations of robots within web browsers. In combination with Ros3djs, a digital twin can be created in the browser that mirrors the physical movements of the real robot. Animations can also be added. For example, a blinking or lighting up of the visualized husky in the browser when the battery SoC is low. 
+As an ongoing project, we have successfully integrated a 3D model of the husky into our application as a proof of concept.
 \end{itemize}
+placeholder text
+
+\subsection{Interaction between backend and frontend}
+The battery state of charge is used as an example to explain the data flow between the backend and frontend. 
+\subsubsection{Direct display of the battery SoC}
+The current value of the battery, which is published by the ROS topic /battery\_percentage, is visualized directly in the user interface with Bootstrap each time the message is received. For this purpose, a ROSLIB.topic object is created beforehand in JavaScript that subscribes to the corresponding ROS topic, allowing real-time updates. It is also possible to send messages to this topic, as is the case with the Husky controller. 
+In this case, the virtual joystick position sends a twist message to the /cmd\_vel topic to move it. 
+The connection between the app and the Husky is established via the WebSocket. 
+\subsubsection{Capturing the values}
+In the backend, a route is defined in the Flask web application that listens for HTTP POST requests at the /save\_data endpoint. If a POST request is received, the incoming JSON data is queried. In this scenario, a battery object is then created with the percentage value and adds it with an id and a timestamp to the database session (Fig. \ref{fig:userapp}). In the event of a database failure, the current battery SoC can still be displayed. The same applies to the engine temperatures.
+\subsubsection{Visualizing the data from the database}
+The SoC for the battery is visualized using Plotly.js as a line chart. This process involves several steps. Initially, data is fetched from the backend database. After processing to ensure compatibility with Plotly.js, it is prepared for visualization. The resulting line diagram represents the battery SoC over a certain time span. Flask facilitates the transfer of Python variables to the frontend. 
+These variables are utilized within HTML templates or JavaScript via Jinja2, a template engine. Users can interact with the system by selecting specific days from a drop-down list. The recorded data corresponding to the chosen day is displayed.
+\subsubsection{Visualizing the data from the database}
+
+\section{Validation and Showcase}
+\subsection{Test}
 
 
-\subsection{Examples backend and frontend}
 
-\subsection{Validation/Showcase}
-
-
-
-\subsection{... and Conclusion}
+\section{Conclusion}
 
 \begin{thebibliography}{00}
 \bibitem{rosOrg} “ros.org,”
