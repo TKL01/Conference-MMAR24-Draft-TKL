@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.14)  18 MAR 2024 05:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.14)  18 MAR 2024 05:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -299,15 +299,15 @@ Before submitting the final camera ready copy, remember to:
 
 [3] (./conference_101719.aux) ) 
 Here is how much of TeX's memory you used:
- 4132 strings out of 480121
- 64572 string characters out of 5892160
+ 4131 strings out of 480121
+ 64565 string characters out of 5892160
  364995 words of memory out of 5000000
  22072 multiletter control sequences out of 15000+600000
- 501461 words of font info for 85 fonts, out of 8000000 for 9000
+ 500325 words of font info for 84 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  55i,8n,62p,489b,266s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (3 pages, 354742 bytes).
+Output written on conference_101719.pdf (3 pages, 354085 bytes).
 PDF statistics:
  44 PDF objects out of 1000 (max. 8388607)
  25 compressed objects within 1 object stream
