@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.14)  18 MAR 2024 05:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.14)  18 MAR 2024 05:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -276,11 +276,14 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 95.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<Pictures/userapp.png, id=11, 1129.21875pt x 843.15pt>
+<Pictures/userapp.png, id=11, 1139.25626pt x 843.15pt>
 File: Pictures/userapp.png Graphic file (type png)
 <use Pictures/userapp.png>
 Package pdftex.def Info: Pictures/userapp.png  used on input line 120.
-(pdftex.def)             Requested size: 253.22934pt x 189.07016pt.
+(pdftex.def)             Requested size: 253.22934pt x 187.4105pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [2 <./Pictures/userapp.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 161--166
 []\OT1/ptm/m/n/8 \clearpathrobotics.com," 2024. [On-line]. Avail-able:
@@ -307,7 +310,7 @@ Here is how much of TeX's memory you used:
  59 hyphenation exceptions out of 8191
  55i,8n,62p,489b,266s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (3 pages, 354085 bytes).
+Output written on conference_101719.pdf (3 pages, 356648 bytes).
 PDF statistics:
  44 PDF objects out of 1000 (max. 8388607)
  25 compressed objects within 1 object stream

@@ -114,7 +114,7 @@ Roslibjs is employed as a JavaScript library to interact with ROS topics, enabli
 The geometry\_msgs/Twist message is composed of linear and angular vectors, which represent the velocity in free space. Specifically, these vectors are expressed in terms of m/s and rad/s, respectively, in a right-handed coordinate system.
 In the context of the Husky robot, a linear velocity of 1 m/s in the positive x-direction corresponds to forward movement at a speed of 1 m/s. To induce rotational movement, an angular velocity is specified in the z-direction. Positive and negative values correspond to counterclockwise and clockwise rotations, respectively.
 \item The Web Video Server is a ROS package that allows HTTP streaming of ROS image topics. This integrates the live image from a Zed 2i camera from StereoLabs into the web interface.
-\item Flask-Login and Werkzeug.security extensions are used to handle login, logout, and session functions, as well as to enhance user password security through password hashing.
+\item Flask-Login and Werkzeug.security extensions are used to handle login, logout, and session functions, as well as to enhance user password security through password hashing. Additionally, it is possible to register new user accounts and assign permissions/priorities via...
 \end{itemize}
 \begin{figure}[htbp]
     \centerline{\includegraphics[width=8.9cm]{Pictures/userapp.png}}
