@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.14)  19 MAR 2024 19:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.14)  19 MAR 2024 20:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -268,11 +268,11 @@ Package pdftex.def Info: Pictures/husky_costum.jpeg  used on input line 81.
 
 
  <./Pictures/husky_costum.jpeg>]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 112.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 111.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 112.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 111.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [2]
@@ -281,7 +281,7 @@ pdfTeX warning: pdflatex (file ./Pictures/userapp.pdf): PDF inclusion: found PDF
 <Pictures/userapp.pdf, id=15, 821.9508pt x 609.23605pt>
 File: Pictures/userapp.pdf Graphic file (type pdf)
 <use Pictures/userapp.pdf>
-Package pdftex.def Info: Pictures/userapp.pdf  used on input line 123.
+Package pdftex.def Info: Pictures/userapp.pdf  used on input line 122.
 (pdftex.def)             Requested size: 253.22934pt x 187.68991pt.
 [3 <./Pictures/userapp.pdf>]
 
@@ -299,35 +299,35 @@ Package pdftex.def Info: Pictures/galaxydesktop.png  used on input line 174.
 <Pictures/3dreal.png, id=53, 588.69937pt x 514.92375pt>
 File: Pictures/3dreal.png Graphic file (type png)
 <use Pictures/3dreal.png>
-Package pdftex.def Info: Pictures/3dreal.png  used on input line 194.
+Package pdftex.def Info: Pictures/3dreal.png  used on input line 193.
 (pdftex.def)             Requested size: 253.22934pt x 221.49146pt.
 [4 <./Pictures/backfront.pdf> <./Pictures/galaxydesktop.png>]
-Underfull \hbox (badness 3323) in paragraph at lines 202--204
+Underfull \hbox (badness 3323) in paragraph at lines 204--205
 []\OT1/ptm/m/n/8 "Husky UGV - Out-door Field Re-search Robot by Clearpath,"
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--204
+Underfull \hbox (badness 10000) in paragraph at lines 204--205
 \OT1/ptm/m/n/8 Clearpathrobotics, https://clearpathrobotics.com/husky-unmanned-
  []
 
 
-Underfull \hbox (badness 1430) in paragraph at lines 204--205
+Underfull \hbox (badness 1430) in paragraph at lines 205--206
 []\OT1/ptm/m/n/8 Zinaid Kapi[]c1, Al-adin Crnki[]c1, Edin Muj[]ci[]c1 and Jasna Hamz-
  []
 
 
-Underfull \hbox (badness 2351) in paragraph at lines 206--207
+Underfull \hbox (badness 2351) in paragraph at lines 207--208
 []\OT1/ptm/m/n/8 "rosbridge[]suite," ROS, http://wiki.ros.org/rosbridge[]suite (ac-cessed
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--212
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
 []\OT1/ptm/m/n/8 "Browsers and de-vices," Get-boot-strap,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--212
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
 \OT1/ptm/m/n/8 https://getbootstrap.com/docs/4.6/getting-started/browsers-devices/
  []
 
@@ -344,15 +344,15 @@ Before submitting the final camera ready copy, remember to:
 
 [5 <./Pictures/3dreal.png>] (./conference_101719.aux) ) 
 Here is how much of TeX's memory you used:
- 4162 strings out of 480121
- 65248 string characters out of 5892160
- 367044 words of memory out of 5000000
- 22100 multiletter control sequences out of 15000+600000
+ 4164 strings out of 480121
+ 65268 string characters out of 5892160
+ 367052 words of memory out of 5000000
+ 22102 multiletter control sequences out of 15000+600000
  500325 words of font info for 84 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  55i,8n,62p,598b,266s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (5 pages, 945341 bytes).
+Output written on conference_101719.pdf (5 pages, 946094 bytes).
 PDF statistics:
  105 PDF objects out of 1000 (max. 8388607)
  48 compressed objects within 1 object stream

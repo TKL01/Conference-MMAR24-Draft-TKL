@@ -86,9 +86,6 @@ Notably, this application is compatible with any device supporting web browsers,
 The robotic platform employed in our research is the Husky Unmanned Ground Vehicle (UGV) manufactured by Clearpath Robotics. This medium-sized mobile robot depicted in Fig. \ref{fig:huskyClearpath} operates on the ROS2 distribution Humble Hawksbill.
 The Husky UGV boasts a substantial maximum payload capacity of 75 kg rendering it suitable for transporting and accommodating various auxiliary components. Researchers can mount additional robots, peripherals and specialized tools on this versatile platform. Its robust design and adaptability make it an ideal choice for a wide range of robotic applications\cite{huskyClearpath}. 
 
-
-
-
 \section{State of the Art}
 In \cite{kapic} a Python web application was developed with the Django framework that uses a single virtual joystick with the objective to teleoperate the TurtleSim robot within a simulation environment. 
 A WebSocket connection and the ROS JavaScript library Roslibjs were used to send commands from the web application to the robot. Specifically, the web application dispatched a twist message comprising of vector components representing both linear and angular motion to the robot. This message effectively guided the robot's movements, enabling teleoperation.
@@ -105,15 +102,17 @@ A live remote interaction platform called TeleRobot was developed in \cite{wang}
 
 \section{Implementation and Design}
 The system architecture of the web application can be dichotomized into distinct backend and frontend components. These components synergistically leverage an array of tools and frameworks to facilitate seamless operation.
+
 \subsection{Backend}
 The web application is a Flask application. Flask is a micro web framework that is characterized by providing the core features to create a python web based application. 
 Flask is also very flexible and highly expandable \cite{flasksqlite}. The following tools are used in the backend:
+
 \begin{itemize}
 \item SQLAlchemy is a Python SQL toolkit and can be integrated into Flask as an extension. SQLAlchemy allows users to link Python objects to SQL databases using Object-Relational Mapping (ORM). This allows, for example, database queries to be made using Python code instead of SQL commands. The extension is also database-agnostic. 
-Python code can be used unchanged for various SQL-based databases such as SQLite, PostgreSQL or MySQL. 
-SQLite3 is used as a database to store ROS and user data. SQLite3 is a serverless database. This characteristic renders it operable in a self-contained manner, devoid of any supplementary software dependencies or intricate configuration settings. Consequently, it exhibits resource efficiency by minimizing the utilization of extraneous computational resources.
+Python code can be used unchanged for various SQL-based databases such as SQLite, PostgreSQL or MySQL \cite{sqlalchemy}. 
+SQLite is used as a database to store ROS and user data. SQLite is a serverless database. It directly performs read and write operations on standard disk files. This characteristic renders it operable in a self-contained manner, devoid of any supplementary software dependencies or intricate configuration settings. Consequently, it exhibits resource efficiency by minimizing the utilization of extraneous computational resources \cite{sqlite}.
 \item The Roslibjs JavaScript library and the Rosbridge v2.0 protocol are used to establish bidirectional communication with the robots and the web application. The Rosbridge server it contains, provides a WebSocket connection so that web browsers can communicate with Rosbridge.
-Roslibjs is employed as a JavaScript library to interact with ROS topics, enabling the subscription to and publication of these topics.\\ A quintessential example of this interaction is the publication of a geometry\_msgs/Twist message on the /cmd\_vel topic of the Husky robot which initiates its movement.
+Roslibjs is employed as a JavaScript library to interact with ROS topics, enabling the subscription to and publication of these topics \cite{rosbridgeOkState} \cite{rosbridgeSuite}.\\ A quintessential example of this interaction is the publication of a geometry\_msgs/Twist message on the /cmd\_vel topic of the Husky robot which initiates its movement.
 The geometry\_msgs/Twist message is composed of linear and angular vectors, which represent the velocity in free space. Specifically, these vectors are expressed in terms of meter per second and radian per second, respectively, in a right-handed coordinate system.
 In the context of the Husky robot, a linear velocity of 1 meter per second in the positive x-direction corresponds to forward movement at a speed of 1 meter per second. To induce rotational movement, an angular velocity is specified in the z-direction. Positive and negative values correspond to counterclockwise and clockwise rotations respectively.
 \item The Web Video Server is a ROS package that allows HTTP streaming of ROS image topics. This integrates the live image from a Zed 2i camera from StereoLabs into the web interface.
@@ -126,9 +125,10 @@ In the context of the Husky robot, a linear velocity of 1 meter per second in th
 \end{figure}
 Fig. \ref{fig:userapp} illustrates the backend architecture and the method by which users can interface with the Husky robot via the web application. This system is designed to operate on any device equipped with a web browser, utilizing the IP address of the Husky's onboard computer for connectivity.
 The user interface provides real-time access to a stream of visual data from a Zed 2i camera as well as control options for the robot. Additionally, it displays current ROS data, including metrics such as the battery State of Charge (SoC) and motor temperatures.
-A key feature of this system is its ability to track and store historical data in the SQLite3 database. This allows for longitudinal analysis of the robot's operational data, which can be instrumental in performance optimization and troubleshooting.
+A key feature of this system is its ability to track and store historical data in the SQLite database. This allows for longitudinal analysis of the robot's operational data, which can be instrumental in performance optimization and troubleshooting.
 This system provides a flexible and accessible platform for robot control and data monitoring. It underscores the potential of web-based interfaces in enhancing the usability and functionality of robotic systems. 
 The use of an IP-based connection protocol further emphasizes the system's adaptability and broad accessibility. The incorporation of a database for data tracking and storage demonstrates a commitment to data-driven decision making and performance optimization. 
+
 \subsection{Frontend}
 The primary objective of the front-end design is to enhance user-friendliness through visually intuitive elements. Additionally, the application aims for robust platform independence, ensuring that users are not constrained by specific devices when accessing the web user interface. 
 To achieve this, the web application is meticulously crafted to be compatible with a wide range of devices including desktop PCs and mobile platforms. The tools discussed here are then shown in \ref{VS} in the graphical user interface.
@@ -184,7 +184,6 @@ Below that, the motor temperature data are plotted as line charts. Both visualiz
 Positioned at the bottom left corner, a similar display exists for the battery Soc. Due to space constraints only a truncated version is visible in Fig \ref{fig:galaxydesktop}. In order to view the battery SoC plot on the desktop view it is required to scroll down. 
 On the Galaxy S10, the navigation bar undergoes compression, resulting in a more compact layout.
 A convenient drop-down menu arrangement allows users to access elements sequentially by scrolling vertically.
-% By examining these nuances, we contribute to the ongoing discourse on responsive web design and optimal user experiences across diverse platforms.
 The control interface features a live image display of a Zed 2i camera, which serves as the primary view. Positioned centrally, this display provides real-time visual feedback. Beneath the image, the speed slider resides. The speed slider is adjustable from 0.1 meter per second to a maximum of 1 meter per second and is accompanied by a numerical readout.
 The interface includes touch-enabled controls: a virtual joystick positioned at the bottom left and virtual keyboard keys at the bottom right. These intuitive input mechanisms facilitate precise guidance control of the Husky robot. Their placement at the screen's edge aligns with the ergonomic orientation of handheld devices such as cell phones or tablets, enhancing user comfort and efficiency. 
 Fig. Y. shows screenshots of the Galaxy S10 and the Microsoft Surface Pro (5th Generation) side by side.
@@ -192,15 +191,17 @@ The 3D model route shows the visualized Husky as depicted in Fig. \ref{fig:3drea
 The elements listed here have been tested with the most common browsers such as Chrome, Firefox or Edge in different versions and on different devices. A list of supported browsers and versions of the Bootstrap components is available on the Bootstrap page \cite{bsBrowsers}. 
 \begin{figure}[hbp]
     \centerline{\includegraphics[width=8.9cm]{Pictures/3dreal.png}}
-    \caption{Picture of the 3D model of the Husky inside the application on the left and the physical Husky on the right}
+    \caption{Husky 3D model inside the application (mobile view) on the left and the physical Husky on the right}
     \label{fig:3dreal}
 \end{figure}
 \section{Conclusion}
+This work has aimed to develop a web-based application that facilitates user interaction with the Husky robot. The primary objectives include providing an intuitive interface for comprehending the robot’s internal mechanisms and environmental context, as well as enabling versatile control over its operations. 
+Notably, compatibility considerations extend to diverse devices with web connectivity, irrespective of their origin or browser specifications. The application integrates a robust database, empowering users to monitor and derive informed decisions from real-time robot data. 
+Additionally, visual representations enhance the presentation of critical parameters, such as motor temperature and battery status.
 
 \begin{thebibliography}{00}
 \bibitem{rosOrg}"ROS - Robot Operating System," ROS, https://ros.org (accessed March 15, 2024).
-\bibitem{huskyClearpath}"Husky UGV - Outdoor Field Research Robot by Clearpath," Clearpathrobotics, https://clearpathrobotics.com/husky-unmanned-ground-vehicle-robot/
-(accessed Feb. 17, 2024).
+\bibitem{huskyClearpath}"Husky UGV - Outdoor Field Research Robot by Clearpath," Clearpathrobotics, https://clearpathrobotics.com/husky-unmanned-ground-vehicle-robot/ (accessed Feb. 17, 2024).
 \bibitem{kapic} Zinaid Kapić1, Aladin Crnkić1, Edin Mujčić1 and Jasna Hamzabegović1, "A web application for remote control of ROS robot based on WebSocket protocol and Django development environment", in IOP Conf. Ser.: Mater. Sci. Eng. 1208 012035, 2021, doi: 10.1088/1757-899X/1208/1/012035.
 \bibitem{rosbridgeOkState} Crick, C., Jay, G., Osentoski, S., Pitzer, B., and Jenkins, O. C. "Rosbridge: Ros for non-ros users" in Robotics Research, Springer, 2017, pp. 493--504.
 \bibitem{rosbridgeSuite}"rosbridge\_suite," ROS, http://wiki.ros.org/rosbridge\_suite (accessed Feb 14, 2024).
@@ -208,6 +209,8 @@ The elements listed here have been tested with the most common browsers such as 
 \bibitem{johnson}Brisaac Johnson et al., "Towards Web-based Environments for Prototyping Social Robot Applications," in Companion of the 2021 ACM/IEEE International Conference on Human-Robot Interaction (HRI '21 Companion). Association for Computing Machinery, New York, NY, USA, 308-312, https://doi.org/10.1145/3434074.3447182.
 \bibitem{wang}X. Wang et al., "TeleRobot: Design and Implementation of a Live Remote Interaction Platform for Robots*," 2023 IEEE International Conference on Systems, Man, and Cybernetics (SMC), Honolulu, Oahu, HI, USA, 2023, pp. 408-412, doi: 10.1109/SMC53992.2023.10394406.
 \bibitem{flasksqlite} Suraya, Muhammad Sholeh, "Designing and Implementing a Database for Thesis Data," in International Journal of Engineering, Science \& InformationTechnology (IJESTY) Volume 2, No. 1, 2022, pp. 9--14, eISSN: 2775-2674.
+\bibitem{sqlalchemy}"The Python SQL Toolkit and Object Relational Mapper," SQLAlchemy, https://www.sqlalchemy.org/ (accessed Feb 20, 2024).
+\bibitem{sqlite}"About SQLite," SQLite, https://www.sqlite.org/about.html (accessed Feb 20, 2024).
 \bibitem{bsBrowsers}"Browsers and devices," Getbootstrap, https://getbootstrap.com/docs/4.6/getting-started/browsers-devices/ (accessed March 17, 2024).
 \end{thebibliography}
 \vspace{12pt}
