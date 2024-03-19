@@ -338,6 +338,16 @@ INPUT ./Pictures/backfront.pdf
 INPUT Pictures/backfront.pdf
 INPUT ./Pictures/backfront.pdf
 INPUT ./Pictures/backfront.pdf
+INPUT ./Pictures/galaxydesktop.png
+INPUT ./Pictures/galaxydesktop.png
+INPUT Pictures/galaxydesktop.png
+INPUT ./Pictures/galaxydesktop.png
+INPUT ./Pictures/galaxydesktop.png
+INPUT ./Pictures/3dreal.png
+INPUT ./Pictures/3dreal.png
+INPUT Pictures/3dreal.png
+INPUT ./Pictures/3dreal.png
+INPUT ./Pictures/3dreal.png
 INPUT conference_101719.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
