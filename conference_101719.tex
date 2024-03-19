@@ -51,9 +51,9 @@ kaigom@fb2.fra-uas.de}
     internal state of the distant robot. For instance, the current
     energy budget is likely to constrain the reachability of the
     initial state after a while, even when spatially and kinematically
-    feasible. We therefore embrace these challenges with a multi-
-    modal approach to provide and employ digital twin of mobile
-    robots. We collect data about the internal state and camera-
+    feasible. We therefore embrace these challenges with a multi-modal 
+    approach to provide and employ digital twin of mobile robots. 
+    We collect data about the internal state and camera-
     captured neighborhood of the robot in real-time. The robot
     operator is thereby provided with a multi-dimensional state and
     perception view that characterizes the robot, elevates situational
@@ -77,14 +77,14 @@ However, for individuals possessing limited or no prior exposure to robot softwa
 This challenge is particularly pronounced for users who rely on robotic assistance and require an intuitive means of interacting with these machines.
 In response to this need, a platform-independent web application was meticulously crafted. 
 Designed with accessibility in mind, this application facilitates seamless monitoring and control of locally networked robots. Users gain access to critical information, including battery status and motor temperatures, all presented through an intuitive web interface. 
-Notably, this application is compatible with any device supporting web browsers, ensuring widespread accessibility and usability.
 \begin{figure}[htbp]
     \centerline{\includegraphics[width=8.9cm]{Pictures/husky_costum.jpeg}}
     \caption{Picture of the Husky UGV by Clearpath}
     \label{fig:huskyClearpath}
-\end{figure} 
-The robotic platform employed in our research is the Husky Unmanned Ground Vehicle (UGV) manufactured by Clearpath Robotics. This medium-sized mobile robot, depicted in Fig. \ref{fig:huskyClearpath}, operates on the ROS2 distribution Humble Hawksbill.
-The Husky UGV boasts a substantial maximum payload capacity of 75 kg, rendering it suitable for transporting and accommodating various auxiliary components. Researchers can mount additional robots, peripherals, and specialized tools on this versatile platform. Its robust design and adaptability make it an ideal choice for a wide range of robotic applications\cite{huskyClearpath}. 
+\end{figure}
+Notably, this application is compatible with any device supporting web browsers, ensuring widespread accessibility and usability.
+The robotic platform employed in our research is the Husky Unmanned Ground Vehicle (UGV) manufactured by Clearpath Robotics. This medium-sized mobile robot depicted in Fig. \ref{fig:huskyClearpath} operates on the ROS2 distribution Humble Hawksbill.
+The Husky UGV boasts a substantial maximum payload capacity of 75 kg rendering it suitable for transporting and accommodating various auxiliary components. Researchers can mount additional robots, peripherals and specialized tools on this versatile platform. Its robust design and adaptability make it an ideal choice for a wide range of robotic applications\cite{huskyClearpath}. 
 
 
 
@@ -128,7 +128,7 @@ This system provides a flexible and accessible platform for robot control and da
 The use of an IP-based connection protocol further emphasizes the system's adaptability and broad accessibility. The incorporation of a database for data tracking and storage demonstrates a commitment to data-driven decision making and performance optimization. 
 \subsection{Frontend}
 The primary objective of the front-end design is to enhance user-friendliness through visually intuitive elements. Additionally, the application aims for robust platform independence, ensuring that users are not constrained by specific devices when accessing the web user interface. 
-To achieve this, the web application is meticulously crafted to be compatible with a wide range of devices including desktop PCs and mobile platforms. 
+To achieve this, the web application is meticulously crafted to be compatible with a wide range of devices including desktop PCs and mobile platforms. The tools discussed here are then shown in \ref{VS} in the graphical user interface.
 \begin{itemize}
 \item Leveraging the free and open-source CSS framework Bootstrap version 4.6, we optimize responsiveness and seamlessly integrate with prevailing web standards such as HTML5, CSS3, and JavaScript. 
 In the context of Bootstrap, the layout structure is organized using the grid system for arranging elements within a web page. 
@@ -143,7 +143,6 @@ These touch keys can also be used for the robot movement. The Husky can be drive
 \item Three.js is a powerful and lightweight 3D graphics library that can be served as a versatile tool for rendering digital representations of robots within web browsers. In combination with Ros3djs, a digital twin can be created in the browser that mirrors the physical movements of the real robot. Animations can also be added. For example, a blinking or lighting up of the visualized husky in the browser when the battery SoC is low. 
 As an ongoing project, we have successfully integrated a 3D model of the Husky into our application as a proof of concept.
 \end{itemize}
-placeholder text
 
 \subsection{Interaction between backend and frontend}
 The battery state of charge is used as an example to explain the data flow between the backend and frontend. 
@@ -156,55 +155,65 @@ In the backend, a route is defined in the Flask web application that listens for
 \subsubsection{Visualizing the data from the database}
 The SoC for the battery is visualized using Plotly.js as a line chart. This process involves several steps. Initially, data is fetched from the backend database. After processing to ensure compatibility with Plotly.js, it is prepared for visualization. The resulting line diagram represents the battery SoC over a certain time span. Flask facilitates the transfer of Python variables to the frontend. 
 These variables are utilized within HTML templates or JavaScript via Jinja2, a template engine. Users can interact with the system by selecting specific days from a drop-down list. The recorded data corresponding to the chosen day is displayed.
-\subsubsection{Connecting to a Open Platform Communications Unified Architecture}
+\subsubsection{Connecting to an Open Platform Communications Unified Architecture}
 A pre-existing DataConnector (DC) has been specifically developed for the Husky as part of a prior project. This DC leverages the Open Platform Communication Unified Architecture (OPC-UA) standard. Through this connector, the ROS data from the Husky can be efficiently retrieved. The retrieval process is facilitated by a client program integrated into the web application and the acquired data is persistently stored in the database. 
-In the event of an OPC-UA server failure, the system is designed continue displaying the real-time ROS data of the Husky similarly to ... .
+In the event of an OPC-UA server failure, the system is designed continue displaying the real-time ROS data of the Husky (Fig. \ref{fig:backfront}).
+\begin{figure}[htbp]
+    \centerline{\includegraphics[width=8.9cm]{Pictures/backfront.pdf}}
+    \caption{Interaction between frontend and backend}
+    \label{fig:backfront}
+\end{figure}
 
-\section{Validation and Showcase}
+\section{Validation and Showcase}\label{VS}
 To test the responsiveness of the front end of the web application, the app was accessed from different devices. The Flask application can run on the Husky's onboard PC or on another PC in the same local network as the Husky with access to the ROS topics. The application was mainly tested on the mobile onboard PC (i5-1135G7 CPU and 16 GB RAM) to serve the locally stored files to the client.
 The representation of the data page is shown in Fig. 3. 
-In this controlled experiment we investigate the visual representation of a web application interface across two distinct devices: a Samsung Galaxy S10 mobile phone and on a full HD monitor. The purpose is to discern how design elements and user experience differ between these platforms.
-On the left hand side the /data page was accessed using a Samsung Galaxy S10 mobile phone while on the right hand side the site was displayed on a full HD monitor.
+In this controlled experiment we investigate the visual representation of the web application interface across two distinct devices: a Samsung Galaxy S10 cell phone and on a desktop PC with a full HD monitor. The purpose is to discern how design elements and user experience differ between these platforms.
+On the left hand side the /data page was accessed using a Samsung Galaxy S10 cell phone while on the right hand side the site was displayed on a full HD monitor.
 Embedded within the navigation bar is a real-time indicator of the battery SoC. This value is updated dynamically as the Husky operates.
 Additionally, a status display reflects the active WebSocket connection, providing essential feedback to the user.
 These elements were crafted using the Bootstrap framework. The current motor temperatures are visualized using angular gauge charts. These succinct representations allow rapid assessment of temperature levels.
 Below that, the motor temperature data are plotted as line charts. Both visualizations were generated using Plotlyjs.
-Positioned at the bottom left corner, a similar display exists for the battery Soc. Due to space constraints only a truncated version is visible on the full HD monitor.
+Positioned at the bottom left corner, a similar display exists for the battery Soc. Due to space constraints only a truncated version is visible in Fig.3. In order to view the battery SoC plot on the desktop view it is required to scroll down. 
 On the Galaxy S10, the navigation bar undergoes compression, resulting in a more compact layout.
 A convenient drop-down menu arrangement allows users to access elements sequentially by scrolling vertically.
 % By examining these nuances, we contribute to the ongoing discourse on responsive web design and optimal user experiences across diverse platforms.
+The control interface features a live image display of a Zed 2i camera, which serves as the primary view. Positioned centrally, this display provides real-time visual feedback. Beneath the image, the speed controller resides. The speed slider is adjustable from 0.1 m/s to a maximum of 1 m/s and is accompanied by a numerical readout.
+The interface includes touch-enabled controls: a virtual joystick positioned at the bottom left and virtual keyboard keys at the bottom right. These intuitive input mechanisms facilitate precise guidance control of the Husky robot. Their placement at the screen's edge aligns with the ergonomic orientation of handheld devices such as cell phones or tablets, enhancing user comfort and efficiency. 
+Fig. Y. shows screenshots of the Galaxy S10 and the Microsoft Surface Pro (5th Generation) side by side.
+The 3D model route shows the visualized Husky as depicted in Fig.X. It is possible to view the model from different angles.
+The elements listed here have been tested with the most common browsers such as Chrome, Firefox or Edge in different versions and on different devices. Browsers and versions that are supported by Bootstrap can be viewed on the Bootstrap page \cite{bsBrowsers}. 
 
 
 
-\subsection{Test}
 
 
 
 \section{Conclusion}
 
 \begin{thebibliography}{00}
-\bibitem{rosOrg} “ros.org,”
-2024.
-[Online].
-Available:
+\bibitem{rosOrg} ``ROS - Robot Operating System,''
+ROS,
 https://ros.org
-\bibitem{huskyClearpath} “clearpathrobotics.com,”
-2024.
-[Online].
-Available:
+(accessed March 15, 2024).
+\bibitem{huskyClearpath}``Husky UGV - Outdoor Field Research Robot by Clearpath,''
+Clearpathrobotics,
 https://clearpathrobotics.com/husky-unmanned-ground-vehicle-robot/
+(accessed Feb. 17, 2024).
 \bibitem{rosbridgeOkState} Crick, C., Jay, G., Osentoski, S., Pitzer, B., and Jenkins, O. C. ``Rosbridge: Ros
 for non-ros users,'' in Robotics Research, Springer, 2017, pp. 493--504.
 \bibitem{flasksqlite} Suraya, Muhammad Sholeh, ``Designing and Implementing a Database for Thesis Data,'' in International Journal of Engineering, Science \& InformationTechnology (IJESTY)
-Volume 2, No. 1, 2022, pp. 9--14, eISSN: 2775-2674
+Volume 2, No. 1, 2022, pp. 9--14, eISSN: 2775-2674.
 \bibitem{rosbridgeSuite}“ros.org,” 
 2024.
 [Online]. 
 Available:
 http://wiki.ros.org/rosbridge\_suite
+\bibitem{bsBrowsers}``Browsers and devices,'' 
+Getbootstrap, 
+https://getbootstrap.com/docs/4.6/getting-started/browsers-devices/ 
+(accessed March 17, 2024).
 \end{thebibliography}
 \vspace{12pt}
-\color{red}
-IEEE conference templates contain guidance text for composing and formatting conference papers. Please ensure that all template text is removed from your conference paper prior to submission to the conference. Failure to remove the template text from your paper may result in your paper not being published.
+
 
 \end{document}
