@@ -75,8 +75,8 @@ kaigom@fb2.fra-uas.de}
 The Robot Operating System (ROS) stands as a ubiquitous middleware framework in the realm of robotics serving as a foundational platform for constructing robot systems and developing robot applications. 
 However, for individuals possessing limited or no prior exposure to robot software, navigating the intricacies of ROS can prove challenging. 
 This challenge is particularly pronounced for users who rely on robotic assistance and require an intuitive means of interacting with these machines.
-In response to this need, a platform-independent web application was meticulously crafted. 
-Designed with accessibility in mind, this application facilitates seamless monitoring and control of locally networked robots. Users gain access to critical information, including battery status and motor temperatures, all presented through an intuitive web interface. 
+In response to this need, a platform-independent web application was was developed. 
+Designed with accessibility in mind, this application facilitates seamless monitoring and control of a locally networked robot. Users gain access to critical information, including battery status and motor temperatures, all presented through an intuitive web interface. 
 \begin{figure}[htp]
     \centerline{\includegraphics[width=8.9cm]{Pictures/husky_costum.jpeg}}
     \caption{Picture of the Husky UGV by Clearpath}
@@ -92,20 +92,20 @@ A WebSocket connection and the ROS JavaScript library Roslibjs were used to send
 The Rosbridge protocol constitutes a pivotal component within the ROS ecosystem. In form of a ROS package (rosbridge\_suite) it includes a WebSocket server and uses the Roslibjs library. Its primary purpose lies in establishing a robust foundation for communication, leveraging the JavaScript Object Notation (JSON).
 In practical terms, the Rosbridge protocol enables programming languages proficient in handling JSON to engage in effective dialogue with ROS via the Rosbridge. 
 This enables external systems and applications to perform certain operations, such as subscribing to or publishing ROS topics \cite{rosbridgeOkState} \cite{rosbridgeSuite}.\\
-In \cite{dinodi} a web application was developed with with the primary objective of moving a Turtlebot3 in a virtual simulation environment with image transmission and autonomous navigation options. A virtual joystick was also made available to the user for manual control. Similarly to the first application, the communication between the app and the Turtlebot3 is facilitated with Rosbridge. 
+In \cite{dinodi} a web application was developed with the primary objective of moving a Turtlebot3 in a virtual simulation environment with image transmission and autonomous navigation options. A virtual joystick was also made available to the user for manual control. Similarly to the first application, the communication between the app and the Turtlebot3 is facilitated with Rosbridge. 
 One of the core aspects of the app is to bring robots closer to beginners and those interested in ROS. 
 The app makes use of a range of frameworks and ROS-specific software. Among others, ReactJS, a JavaScript library was used for the frontend and to create the virtual joystick. For the backend, NodeJS and ExpressJS frameworks were used to open the ROS simulation environments. 
 The Team states that only minimal knowledge of robotics is required to use the application. The app is also accessible to anyone with web access.\\
-In \cite{johnson} a web platform was developed that deals with social robot application development. A physical baxter robot and a virtual baxter robot in the Gazebo ROS simulation environment were used. In essence, it is about web-based interpretation of social signals, hybrid block/text scripting interfaces and ROS integration via Rosbridge. 
-The web components were created using JavaScript. The Baxter robot is equipped with a camera whose video stream is accessible to users via the ROS Package web\_video\_server.\\
-A live remote interaction platform called TeleRobot was developed in \cite{wang}. This is also based on Rosbridge to interact with serveral roboters and WebRTC to transmit images and audio in real time. The main focus of this platform is to make robots accessible to users. The robots are controlled via a control panel. Other features include live chat, live streams, user management and an integrated database.
+In \cite{johnson} a web platform was developed that deals with social robot application development. A physical Baxter robot and a virtual Baxter robot in the Gazebo ROS simulation environment were used. In essence, it is about web-based interpretation of social signals, hybrid block/text scripting interfaces and ROS integration via Rosbridge. 
+The web components were created using JavaScript. The Baxter robot is equipped with a camera whose video stream is accessible to users via the ROS package web\_video\_server.\\
+A live remote interaction platform called TeleRobot was developed in \cite{wang}. This is also based on Rosbridge to interact with serveral robots and WebRTC to transmit images and audio in real time. The main focus of this platform is to make robots accessible to users. The robots are controlled via a control panel. Other features include live chat, live streams, user management and an integrated database.
 
 \section{Implementation and Design}
-The system architecture of the web application can be dichotomized into distinct backend and frontend components. These components synergistically leverage an array of tools and frameworks to facilitate seamless operation.
+The system architecture of our web application can be dichotomized into distinct backend and frontend components. These components synergistically leverage an array of tools and frameworks to facilitate seamless operation.
 
 \subsection{Backend}
-The web application is a Flask application. Flask is a micro web framework that is characterized by providing the core features to create a python web based application. 
-Flask is also very flexible and highly expandable \cite{flasksqlite}. The following tools are used in the backend:
+Our web application is built using Flask, a micro web framework designed for Python.
+Flask offers core features and extensions to swiftly develop web applications. Flask is also very flexible and highly expandable \cite{flasksqlite}. The following tools are used in the backend:
 
 \begin{itemize}
 \item SQLAlchemy is a Python SQL toolkit and can be integrated into Flask as an extension. SQLAlchemy allows users to link Python objects to SQL databases using Object-Relational Mapping (ORM). This allows, for example, database queries to be made using Python code instead of SQL commands. The extension is also database-agnostic. 
@@ -116,9 +116,9 @@ Roslibjs is employed as a JavaScript library to interact with ROS topics, enabli
 The geometry\_msgs/Twist message is composed of linear and angular vectors, which represent the velocity in free space. Specifically, these vectors are expressed in terms of meter per second and radian per second, respectively, in a right-handed coordinate system.
 In the context of the Husky robot, a linear velocity of 1 meter per second in the positive x-direction corresponds to forward movement at a speed of 1 meter per second. To induce rotational movement, an angular velocity is specified in the z-direction. Positive and negative values correspond to counterclockwise and clockwise rotations respectively.
 \item The Web Video Server is a ROS package that allows HTTP streaming of ROS image topics. This integrates the live image from a Zed 2i camera from StereoLabs into the web interface.
-\item Flask-Login and Werkzeug.security extensions are used to handle login, logout, and session functions as well as to enhance user password security through password hashing. Additionally, it is possible to register new user accounts and assign permissions/priorities via...
+\item Flask-Login and Werkzeug.security extensions are used to handle login, logout, and session functions as well as to enhance user password security through password hashing. Additionally, it is possible to register new user accounts and assign permissions to different user roles. 
 \end{itemize}
-\begin{figure}[bp]
+\begin{figure}[tp]
     \centerline{\includegraphics[width=8.9cm]{Pictures/userapp.pdf}}
     \caption{Backend architecture of the web app}
     \label{fig:userapp}
@@ -130,11 +130,11 @@ This system provides a flexible and accessible platform for robot control and da
 The use of an IP-based connection protocol further emphasizes the system's adaptability and broad accessibility. The incorporation of a database for data tracking and storage demonstrates a commitment to data-driven decision making and performance optimization. 
 
 \subsection{Frontend}
-The primary objective of the front-end design is to enhance user-friendliness through visually intuitive elements. Additionally, the application aims for robust platform independence, ensuring that users are not constrained by specific devices when accessing the web user interface. 
-To achieve this, the web application is meticulously crafted to be compatible with a wide range of devices including desktop PCs and mobile platforms. The tools discussed here are then shown in \ref{VS} in the graphical user interface.
+The primary objective of the front-end design is to enhance user-friendliness through visually intuitive components. Additionally, the application aims for platform independence, ensuring that users are not constrained by specific devices when accessing the web user interface. 
+To achieve this, the web application is crafted to be compatible with a wide range of devices including desktop PCs and mobile devices. The tools discussed here are then shown in \ref{VS} in the graphical user interface.
 \begin{itemize}
 \item Leveraging the free and open-source CSS framework Bootstrap version 4.6, we optimize responsiveness and seamlessly integrate with prevailing web standards such as HTML5, CSS3, and JavaScript. 
-In the context of Bootstrap, the layout structure is organized using the grid system for arranging elements within a web page. 
+In the context of Bootstrap, the layout structure is organized using the grid system for arranging elements and components within a web page. 
 Additionally, a navigation bar is crafted to reinforce user navigation.
 Furthermore, the implementation of a battery display is achieved through the utilization of the Bootstrap class .progress-bar. 
 This class enables precise control over visual representations of battery levels or other progress indicators.
@@ -148,20 +148,20 @@ As an ongoing project, we have successfully integrated a 3D model of the Husky i
 \end{itemize}
 
 \subsection{Interaction between backend and frontend}
-The battery state of charge is used as an example to explain the data flow between the backend and frontend. 
+The value of the battery SoC is used as an example to explain the data flow between the backend and frontend. 
 \subsubsection{Direct display of the battery SoC}
-The current value of the battery which is published by the ROS topic /battery\_percentage, is visualized directly in the user interface with Bootstrap each time the message is received. For this purpose, a ROSLIB.topic object is created beforehand in JavaScript that subscribes to the corresponding ROS topic, allowing real-time updates. It is also possible to send messages to this topic, as is the case with the Husky controller. 
-In this case, the virtual joystick position sends a twist message to the /cmd\_vel topic to move it. 
+The current value of the battery SoC which is published by the ROS topic /battery\_percentage is visualized directly in the user interface with Bootstrap each time the message is received. For this purpose, a ROSLIB.topic object is created beforehand in JavaScript that subscribes to the corresponding ROS topic, allowing real-time updates. It is also possible to send messages to this topic, as is the case with the Husky teleoperation. 
+In this case the virtual joystick position sends a twist message to the /cmd\_vel topic to move it. 
 The connection between the app and the Husky is established via the WebSocket. 
 \subsubsection{Capturing the values}
-In the backend, a route is defined in the Flask web application that listens for HTTP POST requests at the /save\_data endpoint. If a POST request is received, the incoming JSON data is queried. In this scenario, a battery object is then created with the percentage value and adds it with an id and a timestamp to the database session (Fig. \ref{fig:userapp}). In the event of a database failure, the current battery SoC can still be displayed. The same applies to the engine temperatures.
+In the backend, a route is defined in the Flask web application that listens for HTTP POST requests at the /save\_data endpoint. If a POST request is received, the incoming JSON data is queried. In this scenario, a battery object is then created with the percentage value and adds it with an id and a timestamp to the database session (Fig. \ref{fig:userapp}). In the event of a database failure, the current battery SoC can still be displayed. The same applies to the engine temperatures (Fig. \ref{fig:backfront}).
 \subsubsection{Visualizing the data from the database}
 The SoC for the battery is visualized using Plotly.js as a line chart. This process involves several steps. Initially, data is fetched from the backend database. After processing to ensure compatibility with Plotly.js, it is prepared for visualization. The resulting line diagram represents the battery SoC over a certain time span. Flask facilitates the transfer of Python variables to the frontend. 
 These variables are utilized within HTML templates or JavaScript via Jinja2, a template engine. Users can interact with the system by selecting specific days from a drop-down list. The recorded data corresponding to the chosen day is displayed.
 \subsubsection{Connecting to an Open Platform Communications Unified Architecture}
 A pre-existing DataConnector (DC) has been specifically developed for the Husky as part of a prior project. This DC leverages the Open Platform Communication Unified Architecture (OPC-UA) standard. Through this connector, the ROS data from the Husky can be efficiently retrieved. The retrieval process is facilitated by a client program integrated into the web application and the acquired data is persistently stored in the database. 
 In the event of an OPC-UA server failure, the system is designed continue displaying the real-time ROS data of the Husky (Fig. \ref{fig:backfront}).
-\begin{figure}[htbp]
+\begin{figure}[bp]
     \centerline{\includegraphics[width=8.9cm]{Pictures/backfront.pdf}}
     \caption{Interaction between frontend and backend}
     \label{fig:backfront}
@@ -170,7 +170,7 @@ In the event of an OPC-UA server failure, the system is designed continue displa
 \section{Validation and Showcase}\label{VS}
 To test the responsiveness of the front end of the web application, the app was accessed from different devices. The Flask application can run on the Husky's onboard PC or on another PC in the same local network as the Husky with access to the ROS topics. The application was mainly tested on the mobile onboard PC (i5-1135G7 CPU and 16 GB RAM) to serve the locally stored files to the client.
 The representation of the data page is shown in Fig. \ref{fig:galaxydesktop}. 
-\begin{figure}[htbp]
+\begin{figure}[bp]
     \centerline{\includegraphics[width=8.9cm, height=4.8cm]{Pictures/galaxydesktop.png}}
     \caption{Galaxy S10 mobile view on the left and desktop view on a full HD monitor on the right}
     \label{fig:galaxydesktop}
@@ -179,16 +179,16 @@ In this controlled experiment we investigate the visual representation of the we
 On the left hand side the /data page was accessed using a Samsung Galaxy S10 cell phone while on the right hand side the site was displayed on a full HD monitor.
 Embedded within the navigation bar is a real-time indicator of the battery SoC. This value is updated dynamically as the Husky operates.
 Additionally, a status display reflects the active WebSocket connection, providing essential feedback to the user.
-These elements were crafted using the Bootstrap framework. The current motor temperatures are visualized using angular gauge charts. These succinct representations allow rapid assessment of temperature levels.
+These components were crafted using the Bootstrap framework. The current motor temperatures are visualized using angular gauge charts. These succinct representations allow rapid assessment of temperature levels.
 Below that, the motor temperature data are plotted as line charts. Both visualizations were generated using Plotlyjs.
-Positioned at the bottom left corner, a similar display exists for the battery Soc. Due to space constraints only a truncated version is visible in Fig \ref{fig:galaxydesktop}. In order to view the battery SoC plot on the desktop view it is required to scroll down. 
+Positioned at the bottom left corner, a similar display exists for the battery SoC. Due to space constraints only a truncated version is visible in Fig \ref{fig:galaxydesktop}. In order to view the battery SoC plot on the desktop view it is required to scroll down. 
 On the Galaxy S10, the navigation bar undergoes compression, resulting in a more compact layout.
 A convenient drop-down menu arrangement allows users to access elements sequentially by scrolling vertically.
 The control interface features a live image display of a Zed 2i camera, which serves as the primary view. Positioned centrally, this display provides real-time visual feedback. Beneath the image, the speed slider resides. The speed slider is adjustable from 0.1 meter per second to a maximum of 1 meter per second and is accompanied by a numerical readout.
 The interface includes touch-enabled controls: a virtual joystick positioned at the bottom left and virtual keyboard keys at the bottom right. These intuitive input mechanisms facilitate precise guidance control of the Husky robot. Their placement at the screen's edge aligns with the ergonomic orientation of handheld devices such as cell phones or tablets, enhancing user comfort and efficiency. 
 Fig. Y. shows screenshots of the Galaxy S10 and the Microsoft Surface Pro (5th Generation) side by side.
 The 3D model route shows the visualized Husky as depicted in Fig. \ref{fig:3dreal}. It is possible to view the model from different angles.
-The elements listed here have been tested with the most common browsers such as Chrome, Firefox or Edge in different versions and on different devices. A list of supported browsers and versions of the Bootstrap components is available on the Bootstrap page \cite{bsBrowsers}. 
+The components listed here have been tested with the most common browsers such as Chrome, Firefox or Edge in different versions and on different devices. A list of supported browsers and versions of the Bootstrap components is available on the Bootstrap webpage \cite{bsBrowsers}. 
 \begin{figure}[hbp]
     \centerline{\includegraphics[width=8.9cm]{Pictures/3dreal.png}}
     \caption{Husky 3D model inside the application (mobile view) on the left and the physical Husky on the right}
