@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1710897088 "/home/tkl/conference-mmar24-draft-TKL/Conference-MMAR24-Draft-TKL/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1710897089
+["pdflatex"] 1710989368 "/home/tkl/conference-mmar24-draft-TKL/Conference-MMAR24-Draft-TKL/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1710989368
   "/etc/texmf/web2c/texmf.cnf" 1709736642 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/tkl/conference-mmar24-draft-TKL/Conference-MMAR24-Draft-TKL/conference_101719.tex" 1710897088 25943 9a77b0aea1232f2889c192ba8684e7f2 ""
+  "/home/tkl/conference-mmar24-draft-TKL/Conference-MMAR24-Draft-TKL/conference_101719.tex" 1710989367 26826 ae8dd24ee1437f926af9bb789183a259 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -63,11 +63,13 @@
   "IEEEtran.cls" 1440632924 288304 b67b6fc6c2abb39f9b461923f5199343 ""
   "Pictures/3dreal.png" 1710860374 340107 9c632fec82a202fa2725c81a0b4df817 ""
   "Pictures/backfront.pdf" 1710817922 49853 7282cbf00cae0370f66bd72e0ac9e380 ""
-  "Pictures/galaxydesktop.png" 1710860732 165214 f4fc24276eadc60c4c749fdffb374810 ""
-  "Pictures/husky_costum.jpeg" 1710714094 206652 310a94a0b407730e3fe80414d5d8e1a8 ""
+  "Pictures/galaxycontrol.jpg" 1710985419 755258 619cb64cccfa4b3a12f39875f1f5fafc ""
+  "Pictures/galaxysurface.jpg" 1710979208 194358 fe3e0adb620ff545cf422b0881a41d39 ""
+  "Pictures/huskyzed2.jpg" 1710976888 904747 913f63d41bfd208a3cfdef0da1df89c6 ""
+  "Pictures/loop.png" 1710986487 460883 84f823a6967630bf141f257307a6c341 ""
   "Pictures/userapp.pdf" 1710735914 89409 f12d4a003460617603b66298a1432098 ""
-  "conference_101719.aux" 1710897089 3173 df84e49f66865c78f650ed7a739674c6 "pdflatex"
-  "conference_101719.tex" 1710897088 25943 9a77b0aea1232f2889c192ba8684e7f2 ""
+  "conference_101719.aux" 1710989368 3765 57270344e1d152cb2f502316858ebe27 "pdflatex"
+  "conference_101719.tex" 1710989367 26826 ae8dd24ee1437f926af9bb789183a259 ""
   (generated)
   "conference_101719.aux"
   "conference_101719.log"
