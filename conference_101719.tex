@@ -102,7 +102,7 @@ A live remote interaction platform called TeleRobot was developed in \cite{wang}
 
 \section{Implementation and Design}
 The system architecture of our web application can be dichotomized into distinct backend and frontend components. These components synergistically leverage an array of tools and frameworks to facilitate seamless operation.
-Fig. \ref{fig:loop} illustrates the general idea of the data loop between the Husky UGV robot and the web application. !!MEHR AUSFÜHREN!!
+Fig. \ref{fig:loop} illustrates the general idea of the data loop between the Husky UGV robot and the web application.
 
 \subsection{Backend}
 Our web application is built using Flask, a micro web framework designed for Python.
@@ -179,8 +179,8 @@ In the event of an OPC-UA server failure, the system is designed to continue dis
 To test the responsiveness of the front end of the web application, the app was accessed from different devices. The Flask application can run on the Husky's onboard PC or on another PC in the same local network as the Husky with access to the ROS topics. The application was mainly tested on the mobile onboard PC (i5-1135G7 CPU and 16 GB RAM) to serve the locally stored files to the client.
 The representation of the data page is shown in Fig. \ref{fig:galaxysurface}. 
 \begin{figure}[htbp]
-    \centerline{\includegraphics[width=8.9cm]{Pictures/galaxysurface.jpg}}
-    \caption{Galaxy S23 mobile view on the left and Surface Pro (5th Gen.) view on the right. [BILD WIRD NOCH VERBESSERT, S. UNTERER ABSTAND]}
+    \centerline{\includegraphics[width=8.8cm]{Pictures/galaxysurfacecut.png}}
+    \caption{Galaxy S23 mobile view on the left and Surface Pro (5th Gen.) view on the right.}
     \label{fig:galaxysurface}
 \end{figure}
 In this experiment we investigate the visual representation of the web application interface across two distinct devices: a Samsung Galaxy S23 cell phone and a Microsoft Surface Pro tablet (5th Gen.). The purpose is to discern how design elements and user experience differ between these platforms.
@@ -207,7 +207,7 @@ The components listed here have been tested with the most common browsers such a
     \caption{Husky 3D model inside the application (mobile view) on the left and the physical Husky on the right}
     \label{fig:3dreal}
 \end{figure}
-\section{Conclusion (and OUTLOOK?)}
+\section{Conclusion}
 This work has aimed to develop a web-based application that facilitates user interaction with the Husky robot. The primary objectives include providing an intuitive interface for comprehending the robot's internal mechanisms and environmental context, as well as enabling versatile control over its operations. 
 Notably, compatibility considerations extend to diverse devices with web connectivity, irrespective of their origin or browser specifications. The application integrates a robust database, empowering users to monitor and derive informed decisions from real-time robot data. 
 Additionally, visual representations enhance the presentation of critical parameters, such as motor temperature and battery status.
