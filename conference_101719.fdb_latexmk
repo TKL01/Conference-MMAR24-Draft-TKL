@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1711067667 "/home/tkl/conference-mmar24-draft-TKL/Conference-MMAR24-Draft-TKL/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1711067668
+["pdflatex"] 1711070020 "/home/tkl/conference-mmar24-draft-TKL/Conference-MMAR24-Draft-TKL/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1711070021
   "/etc/texmf/web2c/texmf.cnf" 1709736642 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/tkl/conference-mmar24-draft-TKL/Conference-MMAR24-Draft-TKL/conference_101719.tex" 1711067667 28432 d8816fd2fb36337ec90e05c66c164d05 ""
+  "/home/tkl/conference-mmar24-draft-TKL/Conference-MMAR24-Draft-TKL/conference_101719.tex" 1711070019 28438 547977c4f4c1bde7b428ca00d0f8122e ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -62,14 +62,14 @@
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1710429084 1879871 d97401cad6cc0cdbb20515f6e75e398a ""
   "IEEEtran.cls" 1440632924 288304 b67b6fc6c2abb39f9b461923f5199343 ""
   "Pictures/3dreal.png" 1710860374 340107 9c632fec82a202fa2725c81a0b4df817 ""
-  "Pictures/backfront.pdf" 1710817922 49853 7282cbf00cae0370f66bd72e0ac9e380 ""
+  "Pictures/backfrontbig.pdf" 1711068595 48815 0eb51e877db5db14e47fe319a3b3b329 ""
   "Pictures/galaxycontrol.jpg" 1710985419 755258 619cb64cccfa4b3a12f39875f1f5fafc ""
   "Pictures/galaxysurfacecut.png" 1711038824 853824 8924bd4cafdbfcaa5161d8de0b8f4123 ""
   "Pictures/huskyzed2.jpg" 1710976888 904747 913f63d41bfd208a3cfdef0da1df89c6 ""
   "Pictures/loop.png" 1710986487 460883 84f823a6967630bf141f257307a6c341 ""
-  "Pictures/userapp.pdf" 1710735914 89409 f12d4a003460617603b66298a1432098 ""
-  "conference_101719.aux" 1711067668 4218 ed28afb6868a24ce30ed5f701f43df2c "pdflatex"
-  "conference_101719.tex" 1711067667 28432 d8816fd2fb36337ec90e05c66c164d05 ""
+  "Pictures/userappbig.pdf" 1711069975 96931 bb129a3661f33d5d38823c127c2483f8 ""
+  "conference_101719.aux" 1711070021 4218 44bc086f70d3e9b4ac21a399df3a4ed6 "pdflatex"
+  "conference_101719.tex" 1711070019 28438 547977c4f4c1bde7b428ca00d0f8122e ""
   (generated)
   "conference_101719.aux"
   "conference_101719.log"
