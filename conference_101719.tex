@@ -164,7 +164,7 @@ The connection between the app and the Husky is established via the WebSocket.
 In the backend, a route is defined in the Flask web application that listens for HTTP POST requests at the /save\_data endpoint. If a POST request is received, the incoming JSON data is queried. In this scenario, a battery object is then created with the percentage value and adds it with an id and a timestamp to the database session (Fig. \ref{fig:userapp}). In the event of a database failure, the current battery SoC can still be displayed. The same applies to the engine temperatures (Fig. \ref{fig:backfront}).
 \subsubsection{Visualizing the data from the database}
 The SoC for the battery is visualized using Plotly.js as a line chart. This process involves several steps. Initially, data are fetched from the backend database. After processing to ensure compatibility with Plotly.js, it is prepared for visualization. The resulting line diagram represents the battery SoC over a certain time span. Flask facilitates the transfer of Python variables to the frontend. 
-These variables are utilized within HTML templates or JavaScript via Jinja, a template engine. Users can interact with the system by selecting specific days from a drop-down list. The recorded data corresponding to the chosen day is displayed.
+These variables are utilized within HTML templates or JavaScript via Jinja, a template engine \cite{jinja}. Users can interact with the system by selecting specific days from a drop-down list. The recorded data corresponding to the chosen day is displayed.
 \begin{figure}[tp]
     \centerline{\includegraphics[width=8.9cm]{Pictures/backfrontbig.pdf}}
     \caption{Interaction between frontend and backend}
@@ -246,8 +246,9 @@ Additionally, visual representations enhance the presentation of critical parame
 \bibitem{plotly}"Plotly JavaScript Open Source Graphing Library," Plotly, https://plotly.com/javascript/ (accessed March 21, 2024).
 \bibitem{nipplejs}"nippleJS," NippleJS by yoannmoi, https://yoannmoi.net/nipplejs/ (accessed March 21, 2024).
 \bibitem{threejs}"Creating a scene," threejs docs, https://threejs.org/docs/index.html\\\#manual/en/introduction/Creating-a-scene (accessed March 21, 2024).
-\bibitem{opcua}"Unified Architecture," Unified Architecture - OPC Foundation, https://opcfoundation.org/about/opc-technologies/opc-ua/ (accessed March 22, 2024).
 \bibitem{ros3djs}"3D Visualization Library for use with the ROS JavaScript Libraries," ros3djs - ROS Wiki, http://wiki.ros.org/ros3djs (accesssed March 21, 2024).
+\bibitem{jinja}"Template Designer Documentation," Template Designer Documentation - Jinja Documentation, https://jinja.palletsprojects.com/en/3.0.x/templates/ (accessed March 22, 2024).
+\bibitem{opcua}"Unified Architecture," Unified Architecture - OPC Foundation, https://opcfoundation.org/about/opc-technologies/opc-ua/ (accessed March 22, 2024).
 \bibitem{bsBrowsers}"Browsers and devices," Getbootstrap, https://getbootstrap.com/docs/4.6/getting-started/browsers-devices/ (accessed March 17, 2024).
 \bibitem{django}"Django makes it easier to build better web apps more quickly and with less code.," The web framework for perfectionists with deadlines., https://www.djangoproject.com/ (accessed March 22, 2024).
 \end{thebibliography}
