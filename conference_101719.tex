@@ -72,10 +72,10 @@ kaigom@fb2.fra-uas.de}
 \end{IEEEkeywords}
 
 \section{Introduction}
-The Robot Operating System (ROS) stands as a ubiquitous middleware framework in the realm of robotics serving as a foundational platform for constructing robot systems and developing robot applications. 
+The Robot Operating System (ROS) stands as a ubiquitous middleware framework in the realm of robotics serving as a foundational platform for constructing robot systems and developing robot applications \cite{rosOrg}. 
 However, for individuals possessing limited or no prior exposure to robot software, navigating the intricacies of ROS can prove challenging. 
 This challenge is particularly pronounced for users who rely on robotic assistance and require an intuitive means of interacting with these machines.
-In response to this need, a platform-independent web application was was developed. 
+In response to this need, we have developed a platform-independent web application. 
 Designed with accessibility in mind, this application facilitates seamless monitoring and control of a locally networked robot. Users gain access to critical information, including battery status and motor temperatures, all presented through an intuitive web interface. 
 \begin{figure}[htp]
     \centerline{\includegraphics[width=8.9cm]{Pictures/huskyzed2.jpg}}
@@ -95,10 +95,10 @@ This enables external systems and applications to perform certain operations, su
 In \cite{dinodi} a web application was developed with the primary objective of moving a Turtlebot3 in a virtual simulation environment with image transmission and autonomous navigation options. A virtual joystick was also made available to the user for manual control. Similarly to the first application, the communication between the app and the Turtlebot3 is facilitated with Rosbridge. 
 One of the core aspects of the app is to bring robots closer to beginners and those interested in ROS. 
 The app makes use of a range of frameworks and ROS-specific software. Among others, ReactJS, a JavaScript library was used for the frontend and to create the virtual joystick. For the backend, NodeJS and ExpressJS frameworks were used to open the ROS simulation environments. 
-The Team states that only minimal knowledge of robotics is required to use the application. The app is also accessible to anyone with web access.\\
+The authors state that only minimal knowledge of robotics is required to use the application. The app is also accessible to anyone with web access.\\
 In \cite{johnson} a web platform was developed that deals with social robot application development. A physical Baxter robot and a virtual Baxter robot in the Gazebo ROS simulation environment were used. In essence, it is about web-based interpretation of social signals, hybrid block/text scripting interfaces and ROS integration via Rosbridge. 
-The web components were created using JavaScript. The Baxter robot is equipped with a camera whose video stream is accessible to users via the ROS package web\_video\_server.\\
-A live remote interaction platform called TeleRobot was developed in \cite{wang}. This is also based on Rosbridge to interact with serveral robots and WebRTC to transmit images and audio in real time. The main focus of this platform is to make robots accessible to users. The robots are controlled via a control panel. Other features include live chat, live streams, user management and an integrated database.
+The web components were created using JavaScript. The Baxter robot is equipped with a camera whose video stream is accessible to users via the ROS package web\_video\_server \cite{webvideoserver}.\\
+A live remote interaction platform called TeleRobot was developed in \cite{wang}. This is also based on Rosbridge to interact with serveral robots and WebRTC to transmit images and audio in real-time. The main focus of this platform is to make robots accessible to users. The robots are controlled via a control panel. Other features include live chat, live streams, user management and an integrated database.
 
 \section{Implementation and Design}
 The system architecture of our web application can be dichotomized into distinct backend and frontend components. These components synergistically leverage an array of tools and frameworks to facilitate seamless operation.
@@ -114,10 +114,10 @@ Python code can be used unchanged for various SQL-based databases such as SQLite
 SQLite is used as a database to store ROS and user data. SQLite is a serverless database. It directly performs read and write operations on standard disk files. This characteristic renders it operable in a self-contained manner, devoid of any supplementary software dependencies or intricate configuration settings. Consequently, it exhibits resource efficiency by minimizing the utilization of extraneous computational resources \cite{sqlite}.
 \item The Roslibjs JavaScript library and the Rosbridge v2.0 protocol are used to establish bidirectional communication with the robots and the web application. The Rosbridge server it contains, provides a WebSocket connection so that web browsers can communicate with Rosbridge.
 Roslibjs is employed as a JavaScript library to interact with ROS topics, enabling the subscription to and publication of these topics \cite{rosbridgeOkState} \cite{rosbridgeSuite}.\\ A quintessential example of this interaction is the publication of a geometry\_msgs/Twist message on the /cmd\_vel topic of the Husky robot which initiates its movement.
-The geometry\_msgs/Twist message is composed of linear and angular vectors, which represent the velocity in free space. Specifically, these vectors are expressed in terms of meter per second and radian per second, respectively, in a right-handed coordinate system.
-In the context of the Husky robot, a linear velocity of 1 meter per second in the positive x-direction corresponds to forward movement at a speed of 1 meter per second. To induce rotational movement, an angular velocity is specified in the z-direction. Positive and negative values correspond to counterclockwise and clockwise rotations respectively.
-\item The Web Video Server is a ROS package that allows HTTP streaming of ROS image topics. This integrates the live image from a Zed 2i camera from StereoLabs into the web interface.
-\item Flask-Login and Werkzeug.security extensions are used to handle login, logout, and session functions as well as to enhance user password security through password hashing. Additionally, it is possible to register new user accounts and assign permissions to different user roles. 
+The geometry\_msgs/Twist message is composed of linear and angular vectors, which represent the velocity in free space \cite{twistmsg}. Specifically, these vectors are expressed in terms of meter per second and radian per second, respectively, in a right-handed coordinate system.
+In the context of the Husky robot, a linear velocity of 1 meter per second in the positive x-direction corresponds to forward movement at a speed of 1 meter per second. To induce rotational movement, an angular velocity is specified in the z-direction \cite{huskydriving}. Positive and negative values correspond to counterclockwise and clockwise rotations respectively.
+\item The Web Video Server is a ROS package that allows HTTP streaming of ROS image topics \cite{webvideoserver}. This integrates the live image from a Zed 2i camera from StereoLabs into the web interface.
+\item Flask-Login and Werkzeug.security extensions are used to handle login, logout, and session functions as well as to enhance user password security through password hashing \cite{flasklogin} \cite{werkzeug}. Additionally, it is possible to register new user accounts and assign permissions to different user roles. 
 \end{itemize}
 \begin{figure*}[htbp]
     \centerline{\includegraphics[width=18.2cm]{Pictures/loop.png}}
@@ -140,17 +140,17 @@ The use of an IP-based connection protocol further emphasizes the system's adapt
 The primary objective of the frontend design is to enhance user-friendliness through visually intuitive components. Additionally, the application aims for platform independence, ensuring that users are not constrained by specific devices when accessing the web user interface. 
 To achieve this, the web application is crafted to be compatible with a wide range of devices including desktop PCs and mobile devices. The result of the individual frontend design tools presented here are shown in \ref{VS}.
 \begin{itemize}
-\item Leveraging the free and open-source CSS framework Bootstrap version 4.6, we optimize responsiveness and seamlessly integrate with prevailing web standards such as HTML5, CSS3, and JavaScript. 
+\item Leveraging the free and open-source CSS framework Bootstrap version 4.6, we optimize responsiveness and seamlessly integrate with prevailing web standards such as HTML5, CSS3, and JavaScript \cite{bootstrap}. 
 In the context of Bootstrap, the layout structure is organized using the grid system for arranging elements and components within a web page. 
 Additionally, a navigation bar is crafted to reinforce user navigation.
 Furthermore, the implementation of a battery display is achieved through the utilization of the Bootstrap class .progress-bar. 
 This class enables precise control over visual representations of battery levels or other progress indicators.
-\item Plotly.js, an open-source graphing library serves as a powerful tool for constructing interactive and touch-enabled visualizations. It facilitates the creation of dynamic plots that allow users to zoom in and out as well as capture screenshots of relevant data.
-\item The Husky is supplied with a physical controller as standard. Teleoperation is achieved through the utilization of an analog joystick and the left and right shoulder buttons to set a specific maximum velocity.
-To extend this functionality to the web interface, Nipple.js is employed. This library empowers the configuration and display of a virtual joystick. Additionally, a horizontally scrollable velocity slider is created using the Bootstrap class .form-control-range to set a desired maximum speed.
-\item The app exhibits versatility in its control mechanisms. Users have the option to teleoperate the robot via a physical keyboard, provided they have one readily available. For users lacking a physical keyboard connection, an alternative method involves utilizing the “WASD” touch keys displayed within the application interface. 
+\item Plotly.js, an open-source graphing library serves as a powerful tool for constructing interactive and touch-enabled visualizations. It facilitates the creation of dynamic plots that allow users to zoom in and out as well as capture screenshots of relevant data \cite{plotly}.
+\item The Husky is supplied with a physical controller as standard. Teleoperation is achieved through the utilization of an analog joystick and the left and right shoulder buttons to set a specific maximum velocity \cite{huskydriving}.
+To extend this functionality to the web interface, Nipple.js is employed. This library empowers the configuration and display of a virtual joystick \cite{nipplejs}. Additionally, a horizontally scrollable velocity slider is created using the Bootstrap class .form-control-range to set a desired maximum speed.
+\item The app exhibits versatility in its control mechanisms. Users have the option to teleoperate the robot via a physical keyboard, provided they have one readily available. For users lacking a physical keyboard connection, an alternative method involves utilizing the custom “WASD” touch keys displayed within the application interface. 
 These touch keys can also be used for the robot movement. The Husky can be driven more precisely using the keyboard buttons. This can be useful when parking, for instance.
-\item Three.js is a powerful and lightweight 3D graphics library that can be served as a versatile tool for rendering digital representations of robots within web browsers. In future work a combination with Ros3djs can be considered to create a digital twin in the browser that mirrors the physical movements of the real robot. Animations can also be added. For example, a blinking or lighting up of the visualized husky in the browser when the battery SoC is low. 
+\item Three.js is a powerful and lightweight 3D graphics library that can be served as a versatile tool for rendering digital representations of robots within web browsers \cite{threejs}. In future work a combination with Ros3djs can be considered to create a digital twin in the browser that mirrors the physical movements of the real robot \cite{ros3djs}. Animations can also be added. For example, a blinking or lighting up of the visualized husky in the browser when the battery SoC is low. 
 As an ongoing project, we have successfully integrated a 3D model of the Husky into our application as a proof of concept (Fig. \ref{fig:3dreal}).
 \end{itemize}
 
@@ -214,17 +214,27 @@ Additionally, visual representations enhance the presentation of critical parame
 [Evtl. Outlook-Part hier]
 
 \begin{thebibliography}{00}
-\bibitem{rosOrg}"ROS - Robot Operating System," ROS, https://ros.org (accessed March 15, 2024).
-\bibitem{huskyClearpath}"Husky UGV - Outdoor Field Research Robot by Clearpath," Clearpathrobotics, https://clearpathrobotics.com/husky-unmanned-ground-vehicle-robot/ (accessed Feb. 17, 2024).
-\bibitem{kapic} Zinaid Kapić1, Aladin Crnkić1, Edin Mujčić1 and Jasna Hamzabegović1, "A web application for remote control of ROS robot based on WebSocket protocol and Django development environment", in IOP Conf. Ser.: Mater. Sci. Eng. 1208 012035, 2021, doi: 10.1088/1757-899X/1208/1/012035.
+\bibitem{rosOrg}"ROS - Robot Operating System," ROS, https://ros.org (accessed March 18, 2024).
+\bibitem{huskyClearpath}"Husky UGV - Outdoor Field Research Robot by Clearpath," Clearpathrobotics, https://clearpathrobotics.com/husky-unmanned-ground-vehicle-robot/ (accessed March 17, 2024).
+\bibitem{kapic} Zinaid Kapić, Aladin Crnkić, Edin Mujčić and Jasna Hamzabegović, "A web application for remote control of ROS robot based on WebSocket protocol and Django development environment", in IOP Conf. Ser.: Mater. Sci. Eng. 1208 012035, 2021, doi: 10.1088/1757-899X/1208/1/012035.
 \bibitem{rosbridgeOkState} Crick, C., Jay, G., Osentoski, S., Pitzer, B., and Jenkins, O. C. "Rosbridge: Ros for non-ros users" in Robotics Research, Springer, 2017, pp. 493--504.
-\bibitem{rosbridgeSuite}"rosbridge\_suite," ROS, http://wiki.ros.org/rosbridge\_suite (accessed Feb 14, 2024).
+\bibitem{rosbridgeSuite}"rosbridge\_suite," ROS, http://wiki.ros.org/rosbridge\_suite (accessed March 14, 2024).
 \bibitem{dinodi} D. D. Rajapaksha et al., "Web Based User-Friendly Graphical Interface to Control Robots with ROS Environment," 2021 6th International Conference on Information Technology Research (ICITR), Moratuwa, Sri Lanka, 2021, pp. 1-6, doi: 10.1109/ICITR54349.2021.9657337.
 \bibitem{johnson}Brisaac Johnson et al., "Towards Web-based Environments for Prototyping Social Robot Applications," in Companion of the 2021 ACM/IEEE International Conference on Human-Robot Interaction (HRI '21 Companion). Association for Computing Machinery, New York, NY, USA, 308-312, https://doi.org/10.1145/3434074.3447182.
+\bibitem{webvideoserver}"web\_video\_server," ROS, http://wiki.ros.org/web\_video\_server (accessed March 20).
 \bibitem{wang}X. Wang et al., "TeleRobot: Design and Implementation of a Live Remote Interaction Platform for Robots*," 2023 IEEE International Conference on Systems, Man, and Cybernetics (SMC), Honolulu, Oahu, HI, USA, 2023, pp. 408-412, doi: 10.1109/SMC53992.2023.10394406.
 \bibitem{flasksqlite} Suraya, Muhammad Sholeh, "Designing and Implementing a Database for Thesis Data," in International Journal of Engineering, Science \& InformationTechnology (IJESTY) Volume 2, No. 1, 2022, pp. 9--14, eISSN: 2775-2674.
-\bibitem{sqlalchemy}"The Python SQL Toolkit and Object Relational Mapper," SQLAlchemy, https://www.sqlalchemy.org/ (accessed Feb 20, 2024).
-\bibitem{sqlite}"About SQLite," SQLite, https://www.sqlite.org/about.html (accessed Feb 20, 2024).
+\bibitem{sqlalchemy}"The Python SQL Toolkit and Object Relational Mapper," SQLAlchemy, https://www.sqlalchemy.org/ (accessed March 20, 2024).
+\bibitem{sqlite}"About SQLite," SQLite, https://www.sqlite.org/about.html (accessed March 20, 2024).
+\bibitem{twistmsg}"geometry\_msgs/Twist Message," ROS docs, https://docs.ros.org/en/diamondback/api/geometry\_msgs/html/msg/\\Twist.html (accessed March 19, 2024).
+\bibitem{huskydriving}"Driving a Robot," Clearpath Robotics docs, https://docs.clearpathrobotics.com/docs/ros/tutorials/driving (accessed March 19, 2024).
+\bibitem{flasklogin}"Flask-Login," flask-login readthedocs, https://flask-login.readthedocs.io/en/latest/ (accessed March 20, 2024).
+\bibitem{werkzeug}"Utilities," Werkzeug, https://werkzeug.palletsprojects.com/en/\\2.3.x/utils/\#module-werkzeug.security (accessed March 20, 2024).
+\bibitem{bootstrap}"Introduction," Bootstrap, https://getbootstrap.co, m/docs/4.6/getting-started/introduction/ (accessed March 16, 2024).
+\bibitem{plotly}"Plotly JavaScript Open Source Graphing Library," Plotly, https://plotly.com/javascript/ (accessed March 21, 2024).
+\bibitem{nipplejs}"nippleJS," NippleJS by yoannmoi, https://yoannmoi.net/nipplejs/ (accessed March 21, 2024).
+\bibitem{threejs}"Creating a scene," threejs docs, https://threejs.org/docs/index.html\\\#manual/en/introduction/Creating-a-scene (accessed March 21, 2024).
+\bibitem{ros3djs}"3D Visualization Library for use with the ROS JavaScript Libraries," ros3djs - ROS Wiki, http://wiki.ros.org/ros3djs (accesssed March 21, 2024).
 \bibitem{bsBrowsers}"Browsers and devices," Getbootstrap, https://getbootstrap.com/docs/4.6/getting-started/browsers-devices/ (accessed March 17, 2024).
 \end{thebibliography}
 \vspace{12pt}

@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1711039047 "/home/tkl/conference-mmar24-draft-TKL/Conference-MMAR24-Draft-TKL/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1711039048
+["pdflatex"] 1711066422 "/home/tkl/conference-mmar24-draft-TKL/Conference-MMAR24-Draft-TKL/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1711066423
   "/etc/texmf/web2c/texmf.cnf" 1709736642 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/tkl/conference-mmar24-draft-TKL/Conference-MMAR24-Draft-TKL/conference_101719.tex" 1711039046 26746 0b7c2fb202982d1263766af2a68fe027 ""
+  "/home/tkl/conference-mmar24-draft-TKL/Conference-MMAR24-Draft-TKL/conference_101719.tex" 1711066422 28396 d1519ee4cee6f71f13e1b0dbc598e459 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1136768653 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -68,8 +68,8 @@
   "Pictures/huskyzed2.jpg" 1710976888 904747 913f63d41bfd208a3cfdef0da1df89c6 ""
   "Pictures/loop.png" 1710986487 460883 84f823a6967630bf141f257307a6c341 ""
   "Pictures/userapp.pdf" 1710735914 89409 f12d4a003460617603b66298a1432098 ""
-  "conference_101719.aux" 1711039048 3702 298f1a194cd2b2df05d22b0d037914e8 "pdflatex"
-  "conference_101719.tex" 1711039046 26746 0b7c2fb202982d1263766af2a68fe027 ""
+  "conference_101719.aux" 1711066423 4218 ed28afb6868a24ce30ed5f701f43df2c "pdflatex"
+  "conference_101719.tex" 1711066422 28396 d1519ee4cee6f71f13e1b0dbc598e459 ""
   (generated)
   "conference_101719.aux"
   "conference_101719.log"
