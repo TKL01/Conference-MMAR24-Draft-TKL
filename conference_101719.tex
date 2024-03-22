@@ -84,7 +84,7 @@ Designed with accessibility in mind, this application facilitates seamless monit
 \end{figure}
 Notably, this application is compatible with any device supporting web browsers, ensuring widespread accessibility and usability.
 The robotic platform employed in our research is the Husky Unmanned Ground Vehicle (UGV) manufactured by Clearpath Robotics \cite{huskyClearpath}. This medium-sized mobile robot depicted in Fig. \ref{fig:huskyClearpath} operates on the ROS2 distribution Humble Hawksbill.
-The Husky UGV boasts a substantial maximum payload capacity of 75 kg rendering it suitable for transporting and accommodating various auxiliary components. Researchers can mount additional robots, peripherals and specialized tools on this versatile platform. Its robust design and adaptability make it an ideal choice for a wide range of robotic applications\cite{huskyClearpath}. 
+The Husky UGV provides a substantial maximum payload capacity of 75 kg making it suitable for transporting and accommodating various auxiliary components. Researchers can mount additional robots, peripherals and specialized tools on this versatile platform. Its robust design and adaptability make it an ideal choice for a wide range of robotic applications\cite{huskyClearpath}. 
 
 \section{State of the Art}
 In \cite{kapic} a Python web application was developed with the Django framework that uses a single virtual joystick with the objective to teleoperate the TurtleSim robot within a simulation environment. 
@@ -163,7 +163,7 @@ The connection between the app and the Husky is established via the WebSocket.
 \subsubsection{Capturing the values}
 In the backend, a route is defined in the Flask web application that listens for HTTP POST requests at the /save\_data endpoint. If a POST request is received, the incoming JSON data is queried. In this scenario, a battery object is then created with the percentage value and adds it with an id and a timestamp to the database session (Fig. \ref{fig:userapp}). In the event of a database failure, the current battery SoC can still be displayed. The same applies to the engine temperatures (Fig. \ref{fig:backfront}).
 \subsubsection{Visualizing the data from the database}
-The SoC for the battery is visualized using Plotly.js as a line chart. This process involves several steps. Initially, data is fetched from the backend database. After processing to ensure compatibility with Plotly.js, it is prepared for visualization. The resulting line diagram represents the battery SoC over a certain time span. Flask facilitates the transfer of Python variables to the frontend. 
+The SoC for the battery is visualized using Plotly.js as a line chart. This process involves several steps. Initially, data are fetched from the backend database. After processing to ensure compatibility with Plotly.js, it is prepared for visualization. The resulting line diagram represents the battery SoC over a certain time span. Flask facilitates the transfer of Python variables to the frontend. 
 These variables are utilized within HTML templates or JavaScript via Jinja, a template engine. Users can interact with the system by selecting specific days from a drop-down list. The recorded data corresponding to the chosen day is displayed.
 \begin{figure}[tp]
     \centerline{\includegraphics[width=8.9cm]{Pictures/backfrontbig.pdf}}
@@ -171,7 +171,7 @@ These variables are utilized within HTML templates or JavaScript via Jinja, a te
     \label{fig:backfront}
 \end{figure}
 \subsubsection{Connecting to an Open Platform Communications Unified Architecture Server}
-A pre-existing DataConnector (DC) has been specifically developed for the Husky as part of a prior project. This DC leverages the Open Platform Communication Unified Architecture \cite{opcua} (OPC-UA) standard. Through this connector, the ROS data from the Husky can be efficiently retrieved. The retrieval process is facilitated by a client program integrated into the web application and the acquired data is persistently stored in the database. 
+A pre-existing DataConnector (DC) has been specifically developed for the Husky as part of a prior project. This DC leverages the Open Platform Communication Unified Architecture \cite{opcua} (OPC-UA) standard. Through this connector, the ROS data from the Husky can be efficiently retrieved. The retrieval process is facilitated by a client program integrated into the web application and the acquired data are persistently stored in the database. 
 In the event of an OPC-UA server failure, the system is designed to continue displaying the real-time ROS data of the Husky (Fig. \ref{fig:backfront}).
 
 
@@ -183,8 +183,8 @@ The representation of the data page is shown in Fig. \ref{fig:galaxysurface}.
     \caption{Galaxy S23 mobile view on the left and Surface Pro (5th Gen.) view on the right.}
     \label{fig:galaxysurface}
 \end{figure}
-In this experiment we investigate the visual representation of the web application interface across two distinct devices: a Samsung Galaxy S23 cell phone and a Microsoft Surface Pro tablet (5th Gen.). The purpose is to discern how design elements and user experience differ between these platforms.
-On the left hand side the /data page was accessed using a Samsung Galaxy S23 cell phone while on the right hand side the site was displayed on the Surface Pro tablet.
+In this experiment we investigate the visual representation of the web application interface across two distinct devices: a Samsung Galaxy S23 cell phone and a Microsoft Surface Pro tablet (5th Generation). The purpose is to discern how design elements and user experience differ between these platforms.
+On the left hand side the data page was accessed using a Samsung Galaxy S23 cell phone while on the right hand side the site was displayed on the Surface Pro tablet.
 Embedded within the navigation bar is a real-time indicator of the battery SoC at the top right corner. This value is updated dynamically as the Husky operates.
 Additionally, a status display reflects the active WebSocket connection (next to the SoC), providing essential feedback to the user.
 These components were developed with the Bootstrap framework. The current motor temperatures are visualized using angular gauge charts. These succinct representations allow rapid assessment of temperature levels.
@@ -209,7 +209,14 @@ The components listed here have been tested with the most common browsers such a
 \end{figure}
 
 \section{Discussion}
-
+Our project synergistically integrates a constellation of frameworks and tools to achieve optimal functionality. In contrast to the comprehensive Python web framework Django, which provides an extensive feature set \cite{django} and was employed in \cite{kapic}, we have opted for Flask - a minimalist web framework that offers only fundamental functionalities. 
+This choice allows us to selectively incorporate essential features and extensions, ensuring a streamlined and efficient self-hosted web application. 
+Analogous to the context in \cite{kapic} and \cite{dinodi}, our application incorporates a virtual joystick.
+The Husky's velocity can be modulated via a speed slider. Alternatively, teleoperation of the robot is achievable through keyboard input. Even in scenarios where a physical keyboard is absent, the mobile platform remains maneuverable using virtual keys. Particularly, the tactile keyboard keys afford finer-grained control compared to the virtual and physical joystick. 
+Furthermore, consideration was given to the ergonomic arrangement of these components within the application, aligning with the natural posture observed during mobile device usage as shown in Fig. \ref{fig:galaxycontrol}.
+As in \cite{kapic}, \cite{dinodi}, \cite{johnson} and \cite{wang}, the robot data are transmitted to the app via the Rosbridge protocol and vice versa, which constitutes bidirectional communication. Similar to \cite{johnson}, a live camera feed was also integrated leveraging the Web Video Server.
+Our backend system architecture also allows us to connect a specially developed OPC-UA server and client to write the Husky's ROS data to the database. In the event of database or OPC-UA server failure, critical ROS data such as the battery State of Charge (SoC) or the engine temperatures remain accessible for real-time display (Fig. \ref{fig:backfront}).
+The visual representation of the components within the web interface is also intuitive and has been built using the responsive Bootstrap frontend toolkit. This enables users to connect to the app as independently as possible from the respective web-enabled device with a customized display.
 
 \section{Conclusion}
 This work has aimed to develop a web-based application that facilitates user interaction with the Husky robot. The primary objectives include providing an intuitive interface for comprehending the robot's internal mechanisms and environmental context, as well as enabling versatile control over its operations. 
@@ -242,6 +249,7 @@ Additionally, visual representations enhance the presentation of critical parame
 \bibitem{opcua}"Unified Architecture," Unified Architecture - OPC Foundation, https://opcfoundation.org/about/opc-technologies/opc-ua/ (accessed March 22, 2024).
 \bibitem{ros3djs}"3D Visualization Library for use with the ROS JavaScript Libraries," ros3djs - ROS Wiki, http://wiki.ros.org/ros3djs (accesssed March 21, 2024).
 \bibitem{bsBrowsers}"Browsers and devices," Getbootstrap, https://getbootstrap.com/docs/4.6/getting-started/browsers-devices/ (accessed March 17, 2024).
+\bibitem{django}"Django makes it easier to build better web apps more quickly and with less code.," The web framework for perfectionists with deadlines., https://www.djangoproject.com/ (accessed March 22, 2024).
 \end{thebibliography}
 \vspace{12pt}
 

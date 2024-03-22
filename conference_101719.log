@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.14)  22 MAR 2024 14:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.14)  22 MAR 2024 16:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -317,67 +317,67 @@ Package pdftex.def Info: Pictures/3dreal.png  used on input line 206.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5 <./Pictures/galaxysurfacecut.png> <./Pictures/galaxycontrol.jpg> <./Pictures/3dreal.png>]
-Underfull \hbox (badness 3323) in paragraph at lines 222--223
+Underfull \hbox (badness 3323) in paragraph at lines 229--230
 []\OT1/ptm/m/n/8 "Husky UGV - Out-door Field Re-search Robot by Clearpath,"
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 222--223
+Underfull \hbox (badness 10000) in paragraph at lines 229--230
 \OT1/ptm/m/n/8 Clearpathrobotics, https://clearpathrobotics.com/husky-unmanned-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--226
+Underfull \hbox (badness 10000) in paragraph at lines 232--233
 []\OT1/ptm/m/n/8 "rosbridge[]suite," ros-bridge suite - ROS Wiki,
  []
 
 
-Underfull \hbox (badness 2443) in paragraph at lines 228--229
+Underfull \hbox (badness 2443) in paragraph at lines 235--236
 []\OT1/ptm/m/n/8 "web[]video[]server," ROS, http://wiki.ros.org/web[]video[]server (ac-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 233--234
+Underfull \hbox (badness 10000) in paragraph at lines 240--241
 []\OT1/ptm/m/n/8 "geometry[]msgs/Twist Mes-sage," ROS docs,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--235
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
 []\OT1/ptm/m/n/8 "Driving a Robot," Clearpath Robotics docs,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--235
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
 \OT1/ptm/m/n/8 https://docs.clearpathrobotics.com/docs/ros/tutorials/driving (ac-cessed
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 236--237
+Underfull \hbox (badness 10000) in paragraph at lines 243--244
 []\OT1/ptm/m/n/8 "Flask-Login," flask-login readthe-docs, https://flask-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 239--240
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
 []\OT1/ptm/m/n/8 "Plotly JavaScript Open Source Graph-ing Li-brary," Plotly,
  []
 
 
-Underfull \hbox (badness 3612) in paragraph at lines 242--243
+Underfull \hbox (badness 3612) in paragraph at lines 249--250
 []\OT1/ptm/m/n/8 "Unified Ar-chi-tec-ture," Uni-fied Ar-chi-tec-ture - OPC Foun-da-tion,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 242--243
+Underfull \hbox (badness 10000) in paragraph at lines 249--250
 \OT1/ptm/m/n/8 https://opcfoundation.org/about/opc-technologies/opc-ua/ (ac-cessed
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--245
+Underfull \hbox (badness 10000) in paragraph at lines 251--252
 []\OT1/ptm/m/n/8 "Browsers and de-vices," Get-boot-strap,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--245
+Underfull \hbox (badness 10000) in paragraph at lines 251--252
 \OT1/ptm/m/n/8 https://getbootstrap.com/docs/4.6/getting-started/browsers-devices/
  []
 
@@ -394,15 +394,15 @@ Before submitting the final camera ready copy, remember to:
 
 [6] (./conference_101719.aux) ) 
 Here is how much of TeX's memory you used:
- 4191 strings out of 480121
- 65794 string characters out of 5892160
- 370182 words of memory out of 5000000
- 22128 multiletter control sequences out of 15000+600000
+ 4192 strings out of 480121
+ 65802 string characters out of 5892160
+ 370188 words of memory out of 5000000
+ 22129 multiletter control sequences out of 15000+600000
  500325 words of font info for 84 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  55i,8n,62p,625b,266s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (6 pages, 3773963 bytes).
+Output written on conference_101719.pdf (6 pages, 3775720 bytes).
 PDF statistics:
  106 PDF objects out of 1000 (max. 8388607)
  47 compressed objects within 1 object stream
