@@ -179,7 +179,7 @@ In the event of an OPC-UA server failure, the system is designed to continue dis
 To test the responsiveness of the front end of the web application, the app was accessed from different devices. The Flask application can run on the Husky's onboard PC or on another PC in the same local network as the Husky with access to the ROS topics. The application was mainly tested on the mobile onboard PC (i5-1135G7 CPU and 16 GB RAM) to serve the locally stored files to the client.
 The representation of the data page is shown in Fig. \ref{fig:galaxysurface}. 
 \begin{figure}[htbp]
-    \centerline{\includegraphics[width=8.8cm]{Pictures/galaxysurfacecut.png}}
+    \centerline{\includegraphics[width=8.8cm, height=7.75cm]{Pictures/galaxysurfacecut.png}}
     \caption{Galaxy S23 mobile view on the left and Surface Pro (5th Gen.) view on the right.}
     \label{fig:galaxysurface}
 \end{figure}
@@ -191,7 +191,7 @@ These components were crafted using the Bootstrap framework. The current motor t
 Below that, the motor temperature data are plotted as line charts. Both visualizations were generated using Plotlyjs.
 Positioned at the bottom left corner, a similar display exists for the battery SoC which can be seen on the Surface Pro tablet. Due to space constraints of the Galaxy S23 screen only a truncated version of the data page is visible in Fig. \ref{fig:galaxysurface}. To view the remaining gauge and plots on the Galxy S23 view it is required to scroll down. The visualizations are listed below each other.  
 On both devices, the navigation bar undergoes compression, resulting in a more compact layout.
-A convenient drop-down menu arrangement (top right) allows users to access elements sequentially by scrolling vertically.\\
+A convenient drop-down menu arrangement (top right) allows users to access elements sequentially by scrolling vertically (Fig. \ref{fig:3dreal}).
 The control interface in Fig. \ref{fig:galaxycontrol} features a live image display of a Zed 2i camera, which serves as the primary view. Positioned centrally, this display provides real-time visual feedback. Beneath the image, the speed slider resides. The speed slider is adjustable from 0.1 meter per second to a maximum of 1 meter per second and is accompanied by a numerical readout.
 The interface includes touch-enabled controls: a virtual joystick positioned at the bottom left and virtual keyboard keys at the bottom right. These intuitive input mechanisms facilitate precise guidance control of the Husky robot. 
 Their placement at the screen's edge aligns with the ergonomic orientation of handheld devices such as cell phones or tablets, enhancing user comfort and efficiency. 
@@ -201,24 +201,25 @@ Their placement at the screen's edge aligns with the ergonomic orientation of ha
     \label{fig:galaxycontrol}
 \end{figure}
 The 3D model route shows the visualized Husky as depicted in Fig. \ref{fig:3dreal}. It is possible to view the model from different angles.
-The components listed here have been tested with the most common browsers such as Chrome, Firefox or Edge in different versions and on different devices. A list of supported browser versions of the Bootstrap components is available on the Bootstrap webpage \cite{bsBrowsers}. 
+The components listed here have been tested with the most common browsers such as Chrome, Firefox or Edge in different versions and on different devices. A list of supported browser versions of the Bootstrap components is available on the Bootstrap website \cite{bsBrowsers}. 
 \begin{figure}[htbp]
     \centerline{\includegraphics[width=8.9cm]{Pictures/3dreal.png}}
     \caption{Husky 3D model inside the application (mobile view) on the left and the physical Husky on the right}
     \label{fig:3dreal}
 \end{figure}
+
 \section{Conclusion}
 This work has aimed to develop a web-based application that facilitates user interaction with the Husky robot. The primary objectives include providing an intuitive interface for comprehending the robot's internal mechanisms and environmental context, as well as enabling versatile control over its operations. 
 Notably, compatibility considerations extend to diverse devices with web connectivity, irrespective of their origin or browser specifications. The application integrates a robust database, empowering users to monitor and derive informed decisions from real-time robot data. 
 Additionally, visual representations enhance the presentation of critical parameters, such as motor temperature and battery status.
-[Evtl. Outlook-Part hier]
+
 
 \begin{thebibliography}{00}
 \bibitem{rosOrg}"ROS - Robot Operating System," ROS, https://ros.org (accessed March 18, 2024).
 \bibitem{huskyClearpath}"Husky UGV - Outdoor Field Research Robot by Clearpath," Clearpathrobotics, https://clearpathrobotics.com/husky-unmanned-ground-vehicle-robot/ (accessed March 17, 2024).
 \bibitem{kapic} Zinaid Kapić, Aladin Crnkić, Edin Mujčić and Jasna Hamzabegović, "A web application for remote control of ROS robot based on WebSocket protocol and Django development environment", in IOP Conf. Ser.: Mater. Sci. Eng. 1208 012035, 2021, doi: 10.1088/1757-899X/1208/1/012035.
 \bibitem{rosbridgeOkState} Crick, C., Jay, G., Osentoski, S., Pitzer, B., and Jenkins, O. C. "Rosbridge: Ros for non-ros users" in Robotics Research, Springer, 2017, pp. 493--504.
-\bibitem{rosbridgeSuite}"rosbridge\_suite," ROS, http://wiki.ros.org/rosbridge\_suite (accessed March 14, 2024).
+\bibitem{rosbridgeSuite}"rosbridge\_suite," rosbridge suite - ROS Wiki, http://wiki.ros.org/rosbridge\_suite (accessed March 14, 2024).
 \bibitem{dinodi} D. D. Rajapaksha et al., "Web Based User-Friendly Graphical Interface to Control Robots with ROS Environment," 2021 6th International Conference on Information Technology Research (ICITR), Moratuwa, Sri Lanka, 2021, pp. 1-6, doi: 10.1109/ICITR54349.2021.9657337.
 \bibitem{johnson}Brisaac Johnson et al., "Towards Web-based Environments for Prototyping Social Robot Applications," in Companion of the 2021 ACM/IEEE International Conference on Human-Robot Interaction (HRI '21 Companion). Association for Computing Machinery, New York, NY, USA, 308-312, https://doi.org/10.1145/3434074.3447182.
 \bibitem{webvideoserver}"web\_video\_server," ROS, http://wiki.ros.org/web\_video\_server (accessed March 20).
