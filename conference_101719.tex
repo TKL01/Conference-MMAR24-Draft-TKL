@@ -116,6 +116,7 @@ SQLite is used as a database to store ROS and user data. Is is a serverless data
 Roslibjs is employed as a JavaScript library to interact with ROS topics, enabling the subscription to and publication of these topics. \cite{rosbridgeOkState, rosbridgeSuite}\\ A quintessential example of this interaction is the publication of a geometry\_msgs/Twist message on the /cmd\_vel topic of the Husky robot which initiates its movement.
 The geometry\_msgs/Twist message is composed of linear and angular vectors, which represent the velocity in free space \cite{twistmsg}. Specifically, these vectors are expressed in terms of meter per second and radian per second, respectively, in a right-handed coordinate system.
 In the context of the Husky robot, a linear velocity of 1 meter per second in the positive x-direction corresponds to forward movement at a speed of 1 meter per second. To induce rotational movement, an angular velocity is specified in the z-direction \cite{huskydriving}. Positive and negative values correspond to counterclockwise and clockwise rotations respectively.
+\item Keyboardteleopjs facilitates the translation of physical keystrokes into robot movements. A message is sent to the /cmd\_vel topic by pressing a key on the keyboard to set the robot in motion. \cite{keyboardteleopjs}
 \item The Web Video Server is a ROS package that allows HTTP streaming of ROS image topics \cite{webvideoserver}. This integrates the live image from a Zed 2i camera from StereoLabs \cite{zed} into the web interface.
 \item Flask-Login and Werkzeug.security extensions are used to handle login, logout, and session functions as well as to enhance user password security through password hashing \cite{flasklogin, werkzeug}. Additionally, it is possible to register new user accounts and assign permissions to different user roles. 
 \end{itemize}
@@ -239,6 +240,7 @@ Additionally, visual representations enhance the presentation of critical parame
 \bibitem{sqlite}"About SQLite," SQLite, https://www.sqlite.org/about.html (accessed March 20, 2024).
 \bibitem{twistmsg}"geometry\_msgs/Twist Message," ROS docs, https://docs.ros.org/en/diamondback/api/geometry\_msgs/html/msg/\\Twist.html (accessed March 19, 2024).
 \bibitem{huskydriving}"Driving a Robot," Clearpath Robotics docs, https://docs.clearpathrobotics.com/docs/ros/tutorials/driving (accessed March 19, 2024).
+\bibitem{keyboardteleopjs}"keyboardteleopjs," keyboardteleopjs - ROS Wiki, http://wiki.ros.org/keyboardteleopjs (accessed March 22, 2024).
 \bibitem{zed}"ZED 2," StereoLabs*, https://www.stereolabs.com/products/zed-2 (accessed March 22, 2024).
 \bibitem{flasklogin}"Flask-Login," flask-login readthedocs, https://flask-login.readthedocs.io/en/latest/ (accessed March 20, 2024).
 \bibitem{werkzeug}"Utilities," Werkzeug, https://werkzeug.palletsprojects.com/en/\\2.3.x/utils/\#module-werkzeug.security (accessed March 20, 2024).

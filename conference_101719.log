@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.14)  23 MAR 2024 00:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.3.14)  23 MAR 2024 04:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -279,7 +279,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <Pictures/loop.png, id=15, 1405.25pt x 501.875pt>
 File: Pictures/loop.png Graphic file (type png)
 <use Pictures/loop.png>
-Package pdftex.def Info: Pictures/loop.png  used on input line 123.
+Package pdftex.def Info: Pictures/loop.png  used on input line 124.
 (pdftex.def)             Requested size: 517.84006pt x 184.94801pt.
 
 
@@ -287,7 +287,7 @@ pdfTeX warning: pdflatex (file ./Pictures/userappbig.pdf): PDF inclusion: found 
 <Pictures/userappbig.pdf, id=17, 1089.10881pt x 674.52pt>
 File: Pictures/userappbig.pdf Graphic file (type pdf)
 <use Pictures/userappbig.pdf>
-Package pdftex.def Info: Pictures/userappbig.pdf  used on input line 129.
+Package pdftex.def Info: Pictures/userappbig.pdf  used on input line 130.
 (pdftex.def)             Requested size: 253.22934pt x 156.83456pt.
 
 
@@ -295,99 +295,101 @@ pdfTeX warning: pdflatex (file ./Pictures/backfrontbig.pdf): PDF inclusion: foun
 <Pictures/backfrontbig.pdf, id=18, 609.23605pt x 354.36388pt>
 File: Pictures/backfrontbig.pdf Graphic file (type pdf)
 <use Pictures/backfrontbig.pdf>
-Package pdftex.def Info: Pictures/backfrontbig.pdf  used on input line 169.
+Package pdftex.def Info: Pictures/backfrontbig.pdf  used on input line 170.
 (pdftex.def)             Requested size: 253.22934pt x 147.29076pt.
 [3]
 <Pictures/galaxysurfacecut.png, id=22, 785.93625pt x 779.91376pt>
 File: Pictures/galaxysurfacecut.png Graphic file (type png)
 <use Pictures/galaxysurfacecut.png>
-Package pdftex.def Info: Pictures/galaxysurfacecut.png  used on input line 182.
+Package pdftex.def Info: Pictures/galaxysurfacecut.png  used on input line 183.
 (pdftex.def)             Requested size: 250.37744pt x 220.50455pt.
 <Pictures/galaxycontrol.jpg, id=23, 1788.6825pt x 1553.805pt>
 File: Pictures/galaxycontrol.jpg Graphic file (type jpg)
 <use Pictures/galaxycontrol.jpg>
-Package pdftex.def Info: Pictures/galaxycontrol.jpg  used on input line 199.
+Package pdftex.def Info: Pictures/galaxycontrol.jpg  used on input line 200.
 (pdftex.def)             Requested size: 253.22934pt x 219.97325pt.
 <Pictures/3dreal.png, id=24, 588.69937pt x 514.92375pt>
 File: Pictures/3dreal.png Graphic file (type png)
 <use Pictures/3dreal.png>
-Package pdftex.def Info: Pictures/3dreal.png  used on input line 206.
+Package pdftex.def Info: Pictures/3dreal.png  used on input line 207.
 (pdftex.def)             Requested size: 253.22934pt x 221.49146pt.
- [4 <./Pictures/loop.png> <./Pictures/userappbig.pdf> <./Pictures/backfrontbig.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5 <./Pictures/galaxysurfacecut.png> <./Pictures/galaxycontrol.jpg> <./Pictures/3dreal.png>]
-Underfull \hbox (badness 3323) in paragraph at lines 229--230
+ [4 <./Pictures/loop.png> <./Pictures/userappbig.pdf> <./Pictures/backfrontbig.pdf>] [5 <./Pictures/galaxysurfacecut.png> <./Pictures/galaxycontrol.jpg> <./Pictures/3dreal.png>]
+Underfull \hbox (badness 3323) in paragraph at lines 230--231
 []\OT1/ptm/m/n/8 "Husky UGV - Out-door Field Re-search Robot by Clearpath,"
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 229--230
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
 \OT1/ptm/m/n/8 Clearpathrobotics, https://clearpathrobotics.com/husky-unmanned-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 232--233
+Underfull \hbox (badness 10000) in paragraph at lines 233--234
 []\OT1/ptm/m/n/8 "rosbridge[]suite," ros-bridge suite - ROS Wiki,
  []
 
 
-Underfull \hbox (badness 2443) in paragraph at lines 235--236
+Underfull \hbox (badness 2443) in paragraph at lines 236--237
 []\OT1/ptm/m/n/8 "web[]video[]server," ROS, http://wiki.ros.org/web[]video[]server (ac-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 240--241
+Underfull \hbox (badness 10000) in paragraph at lines 241--242
 []\OT1/ptm/m/n/8 "geometry[]msgs/Twist Mes-sage," ROS docs,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--242
+Underfull \hbox (badness 10000) in paragraph at lines 242--243
 []\OT1/ptm/m/n/8 "Driving a Robot," Clearpath Robotics docs,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--242
+Underfull \hbox (badness 10000) in paragraph at lines 242--243
 \OT1/ptm/m/n/8 https://docs.clearpathrobotics.com/docs/ros/tutorials/driving (ac-cessed
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 243--244
+[]\OT1/ptm/m/n/8 "keyboardteleopjs," key-board-teleopjs - ROS Wiki,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
 []\OT1/ptm/m/n/8 "Flask-Login," flask-login readthe-docs, https://flask-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 246--247
+Underfull \hbox (badness 10000) in paragraph at lines 248--249
 []\OT1/ptm/m/n/8 "Plotly JavaScript Open Source Graph-ing Li-brary," Plotly,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--251
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
 []\OT1/ptm/m/n/8 "Template De-signer Doc-u-men-ta-tion," Tem-plate De-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 250--251
+Underfull \hbox (badness 10000) in paragraph at lines 252--253
 \OT1/ptm/m/n/8 signer Doc-u-men-ta-tion - Jinja Doc-u-men-ta-tion,
  []
 
 
-Underfull \hbox (badness 3612) in paragraph at lines 251--252
+Underfull \hbox (badness 3612) in paragraph at lines 253--254
 []\OT1/ptm/m/n/8 "Unified Ar-chi-tec-ture," Uni-fied Ar-chi-tec-ture - OPC Foun-da-tion,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--252
+Underfull \hbox (badness 10000) in paragraph at lines 253--254
 \OT1/ptm/m/n/8 https://opcfoundation.org/about/opc-technologies/opc-ua/ (ac-cessed
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--253
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
 []\OT1/ptm/m/n/8 "Browsers and de-vices," Get-boot-strap,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 252--253
+Underfull \hbox (badness 10000) in paragraph at lines 254--255
 \OT1/ptm/m/n/8 https://getbootstrap.com/docs/4.6/getting-started/browsers-devices/
  []
 
@@ -404,15 +406,15 @@ Before submitting the final camera ready copy, remember to:
 
 [6] (./conference_101719.aux) ) 
 Here is how much of TeX's memory you used:
- 4193 strings out of 480121
- 65809 string characters out of 5892160
- 371237 words of memory out of 5000000
- 22130 multiletter control sequences out of 15000+600000
+ 4194 strings out of 480121
+ 65827 string characters out of 5892160
+ 373041 words of memory out of 5000000
+ 22131 multiletter control sequences out of 15000+600000
  500325 words of font info for 84 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  55i,8n,62p,625b,266s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (6 pages, 3775825 bytes).
+Output written on conference_101719.pdf (6 pages, 3775990 bytes).
 PDF statistics:
  106 PDF objects out of 1000 (max. 8388607)
  47 compressed objects within 1 object stream
