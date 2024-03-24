@@ -54,7 +54,7 @@ kaigom@fb2.fra-uas.de}
     feasible. We therefore embrace these challenges with a multi-modal 
     approach to provide and employ digital twin of mobile robots. 
     We collect data about the internal state and camera-
-    captured neighborhood of the robot in real time. The robot
+    captured neighborhood of the robot in real-time. The robot
     operator is thereby provided with a multi-dimensional state and
     perception view that characterizes the robot, elevates situational
     awareness, and facilitates decision support. We then develop a
@@ -88,9 +88,9 @@ The Husky UGV provides a maximum payload capacity of 75 kg and is therefore suit
 
 \section{State of the Art}
 In \cite{kapic} a Python web application was developed with the Django framework that uses a single virtual joystick with the objective to teleoperate the TurtleSim robot within a simulation environment. 
-Therefore, a WebSocket connection and the ROS JavaScript library Roslibjs were used to send commands from the web application to the robot. Specifically, the web application dispatched a twist message comprising of vector components representing both linear and angular motion to the robot. This message effectively guided the robot's movements, enabling teleoperation.
+Therefore, a WebSocket connection and the ROS JavaScript library Roslibjs were used to send commands from the web application to the robot. Specifically, the web application dispatched a twist message comprising of vector components representing both linear and angular motion to the robot. This message guided the robot's movements, enabling teleoperation.
 The Rosbridge protocol constitutes a pivotal component within the ROS ecosystem. In form of a ROS package (rosbridge\_suite) it includes a WebSocket server and uses the Roslibjs library. Its primary purpose lies in establishing a robust foundation for communication, leveraging the JavaScript Object Notation (JSON).
-In practical terms, the Rosbridge protocol enables programming languages proficient in handling JSON to engage in effective dialogue with ROS via the Rosbridge. 
+In practical terms, the Rosbridge protocol enables programming languages proficient in handling JSON to communicate with ROS via the Rosbridge. 
 This enables external systems and applications to perform certain operations, such as subscribing to or publishing ROS topics. \cite{rosbridgeOkState,rosbridgeSuite}\\
 In \cite{dinodi} a web application was developed with the primary objective of moving a Turtlebot3 in a virtual simulation environment with image transmission and autonomous navigation options. A virtual joystick was also made available to the user for manual control. Similarly to the first application, the communication between the app and the Turtlebot3 is facilitated with Rosbridge. 
 One of the core aspects of the app is to bring robots closer to beginners and those interested in ROS. 
@@ -111,7 +111,7 @@ Flask offers core features and extensions to swiftly develop web applications. F
 \begin{itemize}
 \item SQLAlchemy is a Python SQL toolkit and can be integrated into Flask as an extension. SQLAlchemy allows users to link Python objects to SQL databases using Object-Relational Mapping (ORM). This allows, for example, database queries to be made using Python code instead of SQL commands. The extension is also database-agnostic. 
 Python code can be used unchanged for various SQL-based databases such as SQLite, PostgreSQL or MySQL. \cite{sqlalchemy} 
-SQLite is used as a database to store ROS and user data. It is a serverless database, and directly performs read and write operations on standard disk files. This characteristic renders it operable in a self-contained manner, devoid of any supplementary software dependencies or intricate configuration settings. Consequently, it exhibits resource efficiency by minimizing the utilization of extraneous computational resources. \cite{sqlite}
+SQLite is used as a database to store ROS and user data. It is a serverless database, and directly performs read and write operations on standard disk files. This characteristic renders it operable in a self-contained manner, devoid of any supplementary software dependencies or intricate configuration settings. Consequently, it exhibits resource efficiency by minimizing the utilization of computational resources. \cite{sqlite}
 \item The Roslibjs JavaScript library and the Rosbridge v2.0 protocol are used to establish bidirectional communication with the robots and the web application. The Rosbridge server which it contains, provides a WebSocket connection so that web browsers can communicate with Rosbridge.
 Roslibjs is employed as a JavaScript library to interact with ROS topics, enabling the subscription to and publication of these topics. \cite{rosbridgeOkState, rosbridgeSuite}\\ A quintessential example of this interaction is the publication of a geometry\_msgs/Twist message on the /cmd\_vel topic of the Husky robot which initiates its movement.
 The geometry\_msgs/Twist message is composed of linear and angular vectors, which represent the velocity in free space \cite{twistmsg}. Specifically, these vectors are expressed in terms of meter per second and radian per second, respectively, in a right-handed coordinate system.
@@ -137,20 +137,20 @@ The use of an IP-based connection protocol further emphasizes the system's adapt
     \label{fig:userapp}
 \end{figure}
 \subsection{Frontend}
-The primary objective of the frontend design is to enhance user-friendliness through visually intuitive components. Additionally, the application aims for platform independence, ensuring that users are not constrained by specific devices when accessing the web user interface. 
-To achieve this, the web application is crafted to be compatible with a wide range of devices including desktop PCs and mobile devices. The result of the individual frontend design tools presented here are shown in \ref{VS}.
+The primary objective of the frontend design is to enhance user-friendliness through visually intuitive components. In addition, the application aims for platform independence, ensuring that users are not constrained by specific devices when accessing the web user interface. 
+To achieve this, the web application is developed to be compatible with a wide range of devices including desktop PCs and mobile devices. The result of the individual frontend design tools presented here are shown in \ref{VS}.
 \begin{itemize}
 \item Leveraging the free and open-source CSS framework Bootstrap version 4.6, we optimize responsiveness and integrate with prevailing web standards such as HTML5, CSS3, and JavaScript \cite{bootstrap}. 
 In the context of Bootstrap, the layout structure is organized using the grid system for arranging elements and components within a web page. 
-Additionally, a navigation bar is crafted to reinforce user navigation.
+Additionally, a navigation bar is designed to reinforce user navigation.
 Furthermore, the implementation of a battery display is achieved through the utilization of the Bootstrap class .progress-bar. 
 This class enables precise control over visual representations of battery levels or other progress indicators.
-\item Plotly.js, an open-source graphing library serves as a powerful tool for constructing interactive and touch-enabled visualizations. It facilitates the creation of dynamic plots that allow users to zoom in and out as well as capture screenshots of relevant data. \cite{plotly}
+\item Plotly.js, an open-source graphing library serves as a tool for constructing interactive and touch-enabled visualizations. It facilitates the creation of dynamic plots that allow users to zoom in and out as well as capture screenshots of relevant data. \cite{plotly}
 \item The Husky is supplied with a physical controller as standard. Teleoperation is achieved through the utilization of an analog joystick and the left and right shoulder buttons to set a specific maximum velocity \cite{huskydriving}.
-To extend this functionality to the web interface, Nipple.js is employed. This library empowers the configuration and display of a virtual joystick \cite{nipplejs}. Additionally, a horizontally scrollable velocity slider is created using the Bootstrap class .form-control-range to set a desired maximum speed.
+To extend this functionality to the web interface, Nipple.js is employed. This library enables the configuration and display of a virtual joystick \cite{nipplejs}. Additionally, a horizontally scrollable velocity slider is created using the Bootstrap class .form-control-range to set a desired maximum speed.
 \item The app exhibits versatility in its control mechanisms. Users have the option to teleoperate the robot via a physical keyboard, provided they have one readily available. For users lacking a physical keyboard connection, an alternative method involves utilizing the custom “WASD” touch keys displayed within the application interface. 
 These touch keys can also be used for the robot movement. The Husky can be driven more precisely using the keyboard buttons. This can be useful when parking, for instance.
-\item Three.js is a powerful and lightweight 3D graphics library that can be served as a versatile tool for rendering digital representations of robots within web browsers \cite{threejs}. In future work a combination with Ros3djs can be considered to create a digital twin in the browser that mirrors the physical movements of the real robot \cite{ros3djs}. Animations can also be added. For example, a blinking or lighting up of the visualized husky in the browser when the battery SoC is low. 
+\item Three.js is a lightweight 3D graphics library that can be served as a versatile tool for rendering digital representations of robots within web browsers \cite{threejs}. In future work a combination with Ros3djs can be considered to create a digital twin in the browser that mirrors the physical movements of the real robot \cite{ros3djs}. Animations can also be added. For example, a blinking or lighting up of the visualized husky in the browser when the battery SoC is low. 
 As an ongoing project, we have successfully integrated a 3D model of the Husky into our application as a proof of concept (Fig. \ref{fig:3dreal}).
 \end{itemize}
 
@@ -187,7 +187,7 @@ In this experiment we investigate the visual representation of the web applicati
 On the left hand side the data page was accessed using a Samsung Galaxy S23 cell phone while on the right hand side the site was displayed on the Surface Pro tablet.
 Embedded within the navigation bar is a real-time indicator of the battery SoC at the top right corner. This value is updated dynamically as the Husky operates.
 Additionally, a status display reflects the active WebSocket connection (next to the SoC), providing essential feedback to the user.
-These components were developed with the Bootstrap framework. The current motor temperatures are visualized using angular gauge charts. These succinct representations allow rapid assessment of temperature levels.
+These components were developed with the Bootstrap framework. The current motor temperatures are visualized using angular gauge charts. These representations allow rapid assessment of temperature levels.
 Below that, the motor temperature data are plotted as line charts. Both visualizations were generated using Plotlyjs.
 Positioned at the bottom left corner, a similar display exists for the battery SoC which can be seen on the Surface Pro tablet. Due to space constraints of the Galaxy S23 screen only a truncated version of the data page is visible in Fig. \ref{fig:galaxysurface}. To view the remaining gauge and plots on the Galaxy S23, it is required to scroll down. The visualizations are listed below each other.  
 On both devices, the navigation bar undergoes compression, resulting in a more compact layout.
@@ -220,7 +220,7 @@ The visual representation of the components within the web interface is also int
 
 \section{Conclusion}
 This work has aimed to develop a web-based application that facilitates user interaction with the Husky robot. The primary objectives include providing an intuitive interface for comprehending the robot's internal mechanisms and environmental context, as well as enabling versatile control over its operations. 
-Notably, compatibility considerations extend to diverse devices with web connectivity, irrespective of their origin or browser specifications. The application integrates a database, enabling users to monitor and derive informed decisions from real time robot data. 
+Notably, compatibility considerations extend to diverse devices with web connectivity, irrespective of their origin or browser specifications. The application integrates a database, enabling users to monitor and derive informed decisions from real-time robot data. 
 Additionally, visual elements enhance the presentation of critical parameters, such as motor temperature and battery status.
 
 
