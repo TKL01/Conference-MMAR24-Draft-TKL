@@ -76,15 +76,15 @@ The Robot Operating System (ROS) stands as a ubiquitous middleware framework in 
 However, for individuals possessing limited or no prior exposure to robot software, navigating the intricacies of ROS can prove challenging. 
 This challenge is particularly pronounced for users who rely on robotic assistance and require an intuitive means of interacting with these machines.
 In response to this need, we have developed a platform-independent web application. 
-Designed with accessibility in mind, this application facilitates seamless monitoring and control of a locally networked robot. Users gain access to critical information, including battery status and motor temperatures which are all presented through an intuitive web interface. 
+Designed with accessibility in mind, this application facilitates monitoring and control of a locally networked robot. Users gain access to critical information, including battery status and motor temperatures which are all presented through an intuitive web interface. 
 \begin{figure}[htp]
     \centerline{\includegraphics[width=8.9cm]{Pictures/huskyzed2.jpg}}
     \caption{The Husky UGV by Clearpath Robotics with an attached Zed 2i stereo camera}
     \label{fig:huskyClearpath}
 \end{figure}
-Notably, this application is compatible with any device supporting web browsers, ensuring widespread accessibility and usability.
+Notably, this application is compatible with any device supporting web browsers, providing widespread accessibility and usability.
 \\The robotic platform employed in our research is the Husky Unmanned Ground Vehicle (UGV) manufactured by Clearpath Robotics. This medium-sized mobile robot depicted in Fig. \ref{fig:huskyClearpath} operates on the ROS2 distribution Humble Hawksbill.
-The Husky UGV provides a substantial maximum payload capacity of 75 kg and is therefore suitable for transporting and accommodating various auxiliary components. Researchers can mount additional robots, peripherals and specialized tools on this versatile platform. Its robust design and adaptability make it an ideal choice for a wide range of robotic applications. \cite{huskyClearpath} 
+The Husky UGV provides a maximum payload capacity of 75 kg and is therefore suitable for transporting various auxiliary components. Researchers can mount additional robots, peripherals and specialized tools on this versatile platform. Its robust design and adaptability make it an ideal choice for a wide range of robotic applications. \cite{huskyClearpath} 
 
 \section{State of the Art}
 In \cite{kapic} a Python web application was developed with the Django framework that uses a single virtual joystick with the objective to teleoperate the TurtleSim robot within a simulation environment. 
@@ -101,7 +101,7 @@ The web components were created using JavaScript. The Baxter robot is equipped w
 A live remote interaction platform called TeleRobot was developed in \cite{wang}. This is also based on Rosbridge to interact with serveral robots and WebRTC to transmit images and audio in real-time. The main focus of this platform is to make robots accessible to users. The robots are controlled via a control panel. Other features include live chat, live streams, user management and an integrated database.
 
 \section{Implementation and Design}
-The system architecture of our web application can be dichotomized into distinct backend and frontend components. These components synergistically leverage an array of tools and frameworks to facilitate seamless operation.
+The system architecture of our web application can be dichotomized into distinct backend and frontend components. These components synergistically leverage an array of tools and frameworks to facilitate operation.
 Fig. \ref{fig:loop} illustrates the general idea of the data loop between the Husky UGV robot and the web application.
 
 \subsection{Backend}
@@ -140,7 +140,7 @@ The use of an IP-based connection protocol further emphasizes the system's adapt
 The primary objective of the frontend design is to enhance user-friendliness through visually intuitive components. Additionally, the application aims for platform independence, ensuring that users are not constrained by specific devices when accessing the web user interface. 
 To achieve this, the web application is crafted to be compatible with a wide range of devices including desktop PCs and mobile devices. The result of the individual frontend design tools presented here are shown in \ref{VS}.
 \begin{itemize}
-\item Leveraging the free and open-source CSS framework Bootstrap version 4.6, we optimize responsiveness and seamlessly integrate with prevailing web standards such as HTML5, CSS3, and JavaScript \cite{bootstrap}. 
+\item Leveraging the free and open-source CSS framework Bootstrap version 4.6, we optimize responsiveness and integrate with prevailing web standards such as HTML5, CSS3, and JavaScript \cite{bootstrap}. 
 In the context of Bootstrap, the layout structure is organized using the grid system for arranging elements and components within a web page. 
 Additionally, a navigation bar is crafted to reinforce user navigation.
 Furthermore, the implementation of a battery display is achieved through the utilization of the Bootstrap class .progress-bar. 
@@ -220,8 +220,8 @@ The visual representation of the components within the web interface is also int
 
 \section{Conclusion}
 This work has aimed to develop a web-based application that facilitates user interaction with the Husky robot. The primary objectives include providing an intuitive interface for comprehending the robot's internal mechanisms and environmental context, as well as enabling versatile control over its operations. 
-Notably, compatibility considerations extend to diverse devices with web connectivity, irrespective of their origin or browser specifications. The application integrates a robust database, empowering users to monitor and derive informed decisions from real-time robot data. 
-Additionally, visual representations enhance the presentation of critical parameters, such as motor temperature and battery status.
+Notably, compatibility considerations extend to diverse devices with web connectivity, irrespective of their origin or browser specifications. The application integrates a database, enabling users to monitor and derive informed decisions from real time robot data. 
+Additionally, visual elements enhance the presentation of critical parameters, such as motor temperature and battery status.
 
 
 \begin{thebibliography}{00}
