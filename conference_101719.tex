@@ -61,8 +61,7 @@ kaigom@fb2.fra-uas.de}
 \end{abstract}
 
 \begin{IEEEkeywords}
-    Robotics, Multimodal Digital Twins, Industry 4.0, Industry 5.0, Society 5.0, Human-Mobile Robot-
-    Interaction
+    Robotics, Multimodal Digital Twins, Industry 4.0, Industry 5.0, Society 5.0, Human-Mobile Robot-Interaction
 \end{IEEEkeywords}
 
 \section{Introduction}
@@ -150,7 +149,7 @@ In the context of the Husky robot, a linear velocity of 1 meter per second in th
 \Cref{fig:userapp} illustrates the backend architecture and the method by which users can interface with the Husky robot via the web application while being informed by its DT. This system is designed to operate on \textit{any} device equipped with a web browser, utilizing the IP address of the Husky's onboard computer for connectivity.
 The user interface provides real-time access to a live stream from a Zed 2i camera as well as control options for the robot. Additionally, it displays current ROS data, including metrics such as the battery State of Charge (SoC) and motor temperatures (see also r.h.s of \cref{fig:loop}).
 
-A key feature of the developed system is its ability to track and store historical and live data in (not only) the SQLite3 database. The mobile robot turns out to be a mobile data hub. Data stored in it can be transformed into competitive advantages by harnessing edge AI. Doing so adheres to the vision pursued by our overarching value-driven DTs \cite{kaigom2020value} and Metarobotics \cite{kaigom} frameworks to create a global, digital, and parallel  intelligence for robot-driven industrial and societal applications. As depicted in \cref{fig:3dreal}, we strive is to deploy e.g. collective, foundational, generative, and transferable Artificial Intelligence/Machine Learning techniques to support the pervasive and itinerant access to services for the completion of remote robotized applications. These include design, development, automation, maintenance, safety, and sustainability as a service. Next generation wireless communication and immersion, as well as decentralized and interoperating DTs of existing and prospective assets are leveraged to this end. Such DTs are assumed to even learn from each others to accelerate the creation of non-nominal values by taking advantage of particularities, singularities, and differences \cite{kaigom}. In particular, a longitudinal analysis of the robot's business and operational data can be instrumental in creating values. These include an improved robot design and usability for citizen satisfaction (Society 5.0),  smart and efficient production and maintenance (Industry 4.0), \mbox{as well as worker well-being (Industry 5.0).} %Related DT might then learn from each other tu push back current frontiers and 
+A key feature of the developed system is its ability to track and store historical and live data in (not only) the SQLite3 database. The mobile robot turns out to be a mobile data hub. Data stored in it can be transformed into competitive advantages by harnessing edge AI (see \cref{fig:3dreal}). Doing so adheres to the vision pursued by our overarching value-driven DTs \cite{kaigom2020value} and Metarobotics \cite{kaigom} frameworks to create a global, digital, and parallel  intelligence for robot-driven industrial and societal applications. As depicted in \cref{fig:3dreal}, we strive  to deploy e.g. collective, foundational, generative, and deep transferable Artificial Intelligence/Machine Learning techniques to support the pervasive and itinerant access to services for the completion of remote robotized applications. These include design, development, automation, maintenance, safety, and sustainability as a service. Next generation wireless communication (e.g., 6G) and holoportation, as well as decentralized and interoperating DTs of existing and prospective assets are leveraged to this end. It is worth noting that such DTs are assumed to even learn from each others to accelerate the creation of non-nominal values by attentively taking advantage of particularities, singularities, and differences \cite{kaigom}. In particular, a longitudinal analysis of the robot's business and operational data can be instrumental in creating values. These include an improved robot design and usability for citizen satisfaction (Society 5.0),  smart and efficient production and maintenance (Industry 4.0), \mbox{as well as worker well-being (Industry 5.0).} %Related DT might then learn from each other tu push back current frontiers and 
 %This system provides a flexible and accessible platform for robot control and data monitoring. 
 %This underscores the potential of web-based interfaces in enhancing the usability and functionality of robotic systems. 
 %The use of an IP-based connection protocol further emphasizes the system's adaptability and broad accessibility. The incorporation of a database for data tracking and storage demonstrates a commitment to data-driven decision making and performance optimization. 
@@ -199,7 +198,7 @@ In the event of an OPC-UA server failure, the system is designed to continue dis
 
 
 \section{Validation and Showcase}\label{VS}
-To test the responsiveness of the front end of the web application, the app was accessed from different devices. The Flask application can run on the Husky's onboard PC or on another PC in the same local network as the Husky with access to the ROS topics. The application was mainly tested on the mobile onboard PC (i5-1135G7 CPU and 16 GB RAM) to serve the locally stored files to the client.
+To test the responsiveness of the front end of the web application, the app was accessed from different devices (see \cref{fig:galaxysurface,fig:galaxycontrol}). The Flask application can run on the Husky's onboard PC or on another PC in the same local network as the Husky with access to the ROS topics. The application was mainly tested on the mobile onboard PC (i5-1135G7 CPU and 16 GB RAM) to serve the locally stored files to the client.
 The representation of the data page is shown in \cref{fig:galaxysurface}. 
 \begin{figure}[b]
     \centerline{\includegraphics[width=6.cm, height=5.cm]{Pictures/galaxysurfacecut.png}}
@@ -214,7 +213,7 @@ These components were developed with the Bootstrap framework. The current motor 
 Below that, the motor temperature data are plotted as line charts. Both visualizations were generated using Plotlyjs.
 Positioned at the bottom left corner, a similar display exists for the battery SoC which can be seen on the Surface Pro tablet. Due to space constraints of the Galaxy S23 screen only a truncated version of the data page is visible in \cref{fig:galaxysurface}. To view the remaining gauge and plots on the Galaxy S23, it is required to scroll down. The visualizations are listed below each other.  
 On both devices, the navigation bar undergoes compression, resulting in a more compact layout.
-A convenient drop-down menu arrangement (top right) allows users to access elements sequentially by scrolling vertically (see \cref{fig:3dreal}).
+A convenient drop-down menu arrangement (top right) allows users to access elements sequentially by scrolling vertically (see \cref{fig:loop}).
 The control interface in \cref{fig:galaxycontrol} features a live image display of a Zed 2i camera, which serves as the primary view. Positioned centrally, this display provides real-time visual feedback. Beneath the image, the speed slider resides. It is adjustable from 0.1 meter per second to a maximum of 1 meter per second and is accompanied by a numerical readout.
 The interface includes touch-enabled controls: a virtual joystick positioned at the bottom left and virtual keyboard keys at the bottom right. These intuitive input mechanisms facilitate precise guidance control of the Husky robot. 
 Their placement at the screen's edge aligns with the ergonomic orientation of handheld devices such as cell phones or tablets, enhancing user comfort and efficiency. 
@@ -223,16 +222,16 @@ Their placement at the screen's edge aligns with the ergonomic orientation of ha
     \caption{Control panel (mobile view with Galaxy S23) with battery soc, WebSocket status, live camera stream, virtual Joystick, speed slider, etc.}
     \label{fig:galaxycontrol}
 \end{figure}
-The 3D model route shows the visualized Husky as depicted in \cref{fig:3dreal}. It is possible to view the model from different angles.
+The 3D model route shows the visualized Husky (i.e., its live DT) as depicted in \cref{fig:3dreal}. It is possible to view the model from different angles.
 The components listed here have been tested with the most common browsers such as Chrome, Firefox or Edge in different versions and on different devices. A list of supported browser versions of the Bootstrap components is available on the Bootstrap website \cite{bsBrowsers}. 
 \begin{figure}[htbp]
     \centerline{\includegraphics[width=0.98\columnwidth]{Pictures/layer0.pdf}}
-    \caption{Basic overarching idea following \cite{kaigom,kaigom2020value}.}
+    \caption{Basic overarching idea and overall architecture following \cite{kaigom,kaigom2020value}.}
     \label{fig:3dreal}
 \end{figure}
 
 \section{Discussion}
-Our project synergistically integrates a constellation of frameworks and tools to achieve optimal functionality. In contrast to the comprehensive Python web framework Django, which provides an extensive feature set \cite{django} and was employed in \cite{kapic}, we have opted for Flask - a minimalist web framework that offers only fundamental functionalities. 
+Our project synergistically integrates a constellation of frameworks, tools, and DT to achieve optimal functionality. In contrast to the comprehensive Python web framework Django, which provides an extensive feature set \cite{django} and was employed in \cite{kapic}, we have opted for Flask - a minimalist web framework that offers only fundamental functionalities. 
 This choice allows us to selectively incorporate essential features and extensions, ensuring a streamlined and efficient self-hosted web application. 
 Analogous to the context in \cite{kapic} and \cite{dinodi}, our application incorporates a virtual joystick.
 The Husky's velocity can be modulated via a speed slider. Alternatively, teleoperation of the robot is achievable through keyboard input. Even in scenarios where a physical keyboard is absent, the mobile platform remains maneuverable using virtual keys. Particularly, the tactile keyboard keys afford finer-grained control compared to the virtual and physical joystick. 
