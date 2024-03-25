@@ -43,7 +43,7 @@ kaigom@fb2.fra-uas.de}
     In fact, 
     the guidance of such systems
     requires functionalities, including the perception of  environmental constraints and avoidance of collisions. A spatial
-    information beyond the internal robot state measured using
+    information stream beyond the internal robot state measured using
     proprioceptive sensors is therefore needed. Exteroceptive sensors help
     meet this demand. Nevertheless, such sensors have received little
     attention thus far in the development of digital twins. On the
@@ -112,7 +112,7 @@ The Husky UGV provides a maximum payload capacity of 75 kg and is therefore suit
 In \cite{kapic} a Python web application was developed with the Django framework that uses a single virtual joystick with the objective to teleoperate the TurtleSim robot within a simulation environment. 
 Therefore, a WebSocket connection and the ROS (Robot Operating System) \cite{rosbridgeOkState} JavaScript library Roslibjs were used to send commands from the web application to the robot. Specifically, the web application dispatched a twist message composed of vector components representing both linear and angular motion to the robot. This message effectively guided the robot's movements, enabling teleoperation.
 The Rosbridge protocol constitutes a pivotal component within the ROS ecosystem. As a ROS package (rosbridge\_suite), it includes a WebSocket server and uses the Roslibjs library. Its primary purpose lies in establishing a robust foundation for communication, leveraging the JavaScript Object Notation (JSON).
-Specifically, the Rosbridge protocol enables programming languages proficient in handling JSON to engage in effective dialogue with ROS via the Rosbridge. 
+Specifically, the Rosbridge protocol enables programming languages capable in handling JSON to communicate with ROS via the Rosbridge. 
 This enables external systems and applications to perform various operations, such as subscribing to or \mbox{publishing ROS topics while avoiding active polling. \cite{rosbridgeOkState,rosbridgeSuite}}
 
 In \cite{dinodi} a web application was developed with the primary objective of moving a Turtlebot3 in a virtual simulation environment with image transmission and autonomous navigation options. A virtual joystick was also made available to the user for manual control. Similarly to the first application, the communication between the app and the Turtlebot3 is facilitated with Rosbridge. 
@@ -134,7 +134,7 @@ Flask offers core features and extensions to swiftly develop web applications. F
 \begin{itemize}
 \item SQLAlchemy is a Python SQL toolkit and can be integrated into Flask as an extension. SQLAlchemy allows users to link Python objects to SQL databases using Object-Relational Mapping (ORM). This allows, for example, database queries to be made using Python code instead of SQL commands. The extension is also database-agnostic. 
 Python code can be used unchanged for various SQL-based databases such as SQLite, PostgreSQL or MySQL. \cite{sqlalchemy} 
-SQLite is used as a database to store ROS and user data pertaining to the DT. It is a serverless database, and directly performs read and write operations on standard disk files. This characteristic renders it operable in a self-contained manner, devoid of any supplementary software dependencies or intricate configuration settings. Consequently, it exhibits resource efficiency by minimizing the utilization of extraneous computational resources \cite{sqlite}, from which DT-based  applications in-motion and underlying services benefit. 
+SQLite is used as a database to store ROS and user data pertaining to the DT. It is a serverless database, and directly performs read and write operations on standard disk files. This characteristic renders it operable in a self-contained manner, devoid of any supplementary software dependencies or additional configuration settings. Consequently, it exhibits resource efficiency by minimizing the utilization of computational resources \cite{sqlite}, from which DT-based  applications in-motion and underlying services benefit. 
 \item The Roslibjs JavaScript library and the Rosbridge v2.0 protocol are used to establish bidirectional communication with the robots and the web application. The Rosbridge server which it contains, provides a WebSocket connection so that web browsers can communicate with Rosbridge.
 Roslibjs is employed as a JavaScript library to interact with ROS topics, enabling the subscription to and publication of these topics. \cite{rosbridgeOkState, rosbridgeSuite} Hence,  the DT can mediate as monitoring interface without active polling.
 
@@ -161,16 +161,16 @@ A key feature of the developed system is its ability to track and store historic
 \end{figure}
 \subsection{Frontend}
 An objective of the frontend design is to enhance user-friendliness through visually intuitive components. Furthermore, the application aims for platform independence, ensuring that users are not constrained by specific devices when accessing the web user interface. 
-To achieve this, the web application is crafted to be compatible with a wide range of devices including desktop PCs and mobile devices (see \cref{fig:galaxysurface}). Implementation details and outcomes of the individual frontend design tools presented here are shown in \ref{VS}.
+To achieve this, the web application is developed to be compatible with a wide range of devices including desktop PCs and mobile devices (see \cref{fig:galaxysurface}). Implementation details and outcomes of the individual frontend design tools presented here are shown in \ref{VS}.
 \begin{itemize}
-\item Leveraging on the free and open-source CSS framework Bootstrap version 4.6, we optimize responsiveness and seamlessly integrate with prevailing web standards such as HTML5, CSS3, and JavaScript \cite{bootstrap}. 
+\item Leveraging on the free and open-source CSS framework Bootstrap version 4.6, we optimize responsiveness and integrate with prevailing web standards such as HTML5, CSS3, and JavaScript \cite{bootstrap}. 
 In the context of Bootstrap, the layout structure is organized using the grid system for arranging elements and components within a web page. 
 Additionally, a navigation bar is crafted to reinforce user navigation.
 Furthermore, the implementation of a battery display is achieved through the utilization of the Bootstrap class .progress-bar. 
 This class enables precise control over visual representations of battery levels or  progress indicators (see r.h.s of \cref{fig:loop}).
-\item Plotly.js, an open-source graphing library serves as a powerful tool for constructing interactive and touch-enabled visualizations. It facilitates the creation of dynamic plots that allow users to zoom in and out as well as capture screenshots of relevant data, \cite{plotly} (see r.h.s of \cref{fig:loop}). 
+\item Plotly.js, an open-source graphing library serves as a tool for constructing interactive and touch-enabled visualizations. It facilitates the creation of dynamic plots that allow users to zoom in and out as well as capture screenshots of relevant data, \cite{plotly} (see r.h.s of \cref{fig:loop}). 
 \item The Husky robot is equipped with a physical motion controller by default. Teleoperation is achieved through the utilization of an analog joystick and the left and right shoulder buttons to set a specific maximum velocity \cite{huskydriving}.
-We streamline, extend. and transfer this functionality to the web interface. Nipple.js is used to this end. This library enables the configuration and display of a virtual joystick \cite{nipplejs} (see \cref{fig:loop}). Also, a horizontally scrollable velocity slider is created using the Bootstrap class .form-control-range to set a desired maximum speed (see \cref{fig:loop}).
+We streamline, extend and transfer this functionality to the web interface. Nipple.js is used to this end. This library enables the configuration and display of a virtual joystick \cite{nipplejs} (see \cref{fig:loop}). Also, a horizontally scrollable velocity slider is created using the Bootstrap class .form-control-range to set a desired maximum speed (see \cref{fig:loop}).
 \item The app exhibits versatility in its control mechanisms. Users have the option to teleoperate the robot via a physical keyboard, provided they have one readily available. For users without  physical keyboard connection, an alternative method involves utilizing the custom “WASD” touch keys displayed within the application interface. 
 These touch keys can also be used for the robot movement. The Husky can be driven more precisely using the keyboard buttons. This is useful when, e.g., parking.
 \item Three.js is a powerful and lightweight 3D graphics library that can be served as a versatile tool for rendering digital representations of robots within web browsers \cite{threejs}. In future work a combination with Ros3djs can be considered to further implement and reflect in terms of animations the live movements of the real robot on the browser \cite{ros3djs}. For example, a blinking or lighting up of the visualized husky in the browser when the battery SoC is low. 
@@ -243,7 +243,7 @@ The visual representation of the components within the web interface is also int
 
 \section{Conclusion}
 In this work, a web-based framework that facilitates the monitoring and control of the Husky robot has been developed. A multimodal digital twin approach is involved to reflect the internal dynamics and environmental context, as well as enabling a versatile control over the motion behavior of the remote mobile robot. 
-Our framework supports devices with web connectivity, irrespective of their origin, or browser specifications. The framework integrates a robust database, empowering users to monitor and make  informed decisions from holistic real-time data over the robot. 
+Our framework supports devices with web connectivity, irrespective of their origin, or browser specifications. The framework integrates a robust database, enabling users to monitor and make  informed decisions from holistic real-time data over the robot. 
 Additionally, visual representations enhance the presentation and interpretation of critical parameters, \mbox{such as motor temperature and battery status.}
 
 
@@ -283,11 +283,11 @@ Guiffo Kaigom, E.  "Metarobotics for Industry and Society: Vision, Technologies,
 \bibitem{plotly}"Plotly JavaScript Open Source Graphing Library," Plotly, \url{https://plotly.com/javascript/} (accessed March 21, 2024).
 \bibitem{nipplejs}"nippleJS," NippleJS by yoannmoi, \url{https://yoannmoi.net/nipplejs/} (accessed March 21, 2024).
 \bibitem{threejs}"Creating a scene," threejs docs, \url{https://threejs.org/docs/index.html\\\#manual/en/introduction/Creating-a-scene} (accessed March 21, 2024).
-\bibitem{ros3djs}"3D Visualization Library for use with the ROS JavaScript Libraries," ros3djs - ROS Wiki, http://wiki.ros.org/ros3djs (accesssed March 21, 2024).
-\bibitem{jinja}"Template Designer Documentation," Template Designer Documentation - Jinja Documentation, \url{https://jinja.palletsprojects.com/en/3.0.x/templates/} (accessed 22.03.24).
-\bibitem{opcua}"Unified Architecture," Unified Architecture - OPC Foundation, \url{https://opcfoundation.org/about/opc-technologies/opc-ua/} (accessed 22.03.24).
+\bibitem{ros3djs}"3D Visualization Library for use with the ROS JavaScript Libraries," ros3djs - ROS Wiki, \url{http://wiki.ros.org/ros3djs} (accesssed March 21, 2024).
+\bibitem{jinja}"Template Designer Documentation," Template Designer Documentation - Jinja Documentation, \url{https://jinja.palletsprojects.com/en/3.0.x/templates/} (accessed March 22, 2024).
+\bibitem{opcua}"Unified Architecture," Unified Architecture - OPC Foundation, \url{https://opcfoundation.org/about/opc-technologies/opc-ua/} (accessed March 22, 2024).
 \bibitem{bsBrowsers}"Browsers and devices," Getbootstrap, \url{https://getbootstrap.com/docs/4.6/getting-started/browsers-devices/} (accessed March 17, 2024).
-\bibitem{django}"Django makes it easier to build better web apps more quickly and with less code.," The web framework for perfectionists with deadlines., \url{https://www.djangoproject.com/} (accessed 22.03.24).
+\bibitem{django}"Django makes it easier to build better web apps more quickly and with less code.," The web framework for perfectionists with deadlines., \url{https://www.djangoproject.com/} (accessed March 22, 2024).
 \end{thebibliography}
 \vspace{12pt}
 
