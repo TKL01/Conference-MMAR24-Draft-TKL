@@ -74,11 +74,11 @@ Although digital twins (DTs) projected to attain a market of USD 259.32 billion 
 	\label{fig:huskyClearpath}
 \end{figure} 
 
-The fusion of data  about the internal dynamic state collected by proprioceptive sensors, such as  odometry sensors, and external environment state captured by exteroceptive sensors, such as the camera in \cref{fig:huskyClearpath}, has  recently been pointed out to improve the performance of robotized systems of systems (SoS) in terms of perception and shared control \cite{chen2023enabling,kaigom}. We argue that endowing DTs with such a multi-modal and complementary  data-driven capture of visual (i.e., external) and behavioral (i.e., internal)  properties of SoS in real-time elevates situational awareness and facilitate informed decision making in applications  propelled by DTs. %This is done while remotely, \textit{internally}, and \textit{spatially} not only monitoring but also steering a robot to reach a desired location. 
+The fusion of data  about the internal dynamic state collected by proprioceptive sensors, such as  odometry sensors, and external environment state captured by exteroceptive sensors, such as the camera in \cref{fig:huskyClearpath}, has  recently been pointed out to improve the performance of robotized systems of systems (SoS) in terms of perception and shared control \cite{chen2023enabling,kaigom}. We argue that endowing DTs with such a multi-modal and complementary  data-driven capture of visual (i.e., external) and behavioral (i.e., internal)  properties of SoS in real-time elevates situational awareness and facilitate informed decision making in the increasing \mbox{range of applications  propelled by DTs.} %This is done while remotely, \textit{internally}, and \textit{spatially} not only monitoring but also steering a robot to reach a desired location. 
 
 \begin{figure*}[t]
-	\centerline{\includegraphics[width=16.35cm]{Pictures/loop.png}}
-	\caption{Data loop between the Husky UGV robot and the web user interface}
+	\centerline{\includegraphics[width=15.35cm]{Pictures/loop.png}}
+	\caption{Bidirectional data flow between the physical Husky UGV robot (l.h.s) and the web user interface (r.h.s) that hosts the multimodal DT.}
 	\label{fig:loop}
 \end{figure*}
  
@@ -133,7 +133,7 @@ Flask offers core features and extensions to swiftly develop web applications. F
 \begin{itemize}
 \item SQLAlchemy is a Python SQL toolkit and can be integrated into Flask as an extension. SQLAlchemy allows users to link Python objects to SQL databases using Object-Relational Mapping (ORM). This allows, for example, database queries to be made using Python code instead of SQL commands. The extension is also database-agnostic. 
 Python code can be used unchanged for various SQL-based databases such as SQLite, PostgreSQL or MySQL. \cite{sqlalchemy} 
-SQLite is used as a database to store ROS and user data pertaining to the DT. It is a serverless database, and directly performs read and write operations on standard disk files. This characteristic renders it operable in a self-contained manner, devoid of any supplementary software dependencies or additional configuration settings. Consequently, it exhibits resource efficiency by minimizing the utilization of computational resources \cite{sqlite}, from which DT-based  applications in-motion and underlying services benefit. 
+SQLite is used as a database to store ROS and user data pertaining to the DT. It is a serverless database, and directly performs read and write operations on standard disk files. This characteristic renders it operable in a self-contained manner, devoid of any supplementary software dependencies or additional configuration settings. Hence, it exhibits resource efficiency by minimizing the utilization of computational resources \cite{sqlite}, from which in-motion applications leveraging DTs that mirror internal state and external perception  benefit. 
 \item The Roslibjs JavaScript library and the Rosbridge v2.0 protocol are used to establish bidirectional communication with the robots and the web application. The Rosbridge server which it contains, provides a WebSocket connection so that web browsers can communicate with Rosbridge.
 Roslibjs is employed as a JavaScript library to interact with ROS topics, enabling the subscription to and publication of these topics. \cite{rosbridgeOkState, rosbridgeSuite} Hence,  the DT can mediate as monitoring interface without active polling.
 
@@ -149,13 +149,13 @@ In the context of the Husky robot, a linear velocity of 1 meter per second in th
 \Cref{fig:userapp} illustrates the backend architecture and the method by which users can interface with the Husky robot via the web application while being informed by its DT. This system is designed to operate on \textit{any} device equipped with a web browser, utilizing the IP address of the Husky's onboard computer for connectivity.
 The user interface provides real-time access to a live stream from a Zed 2i camera as well as control options for the robot. Additionally, it displays current ROS data, including metrics such as the battery State of Charge (SoC) and motor temperatures (see also r.h.s of \cref{fig:loop}).
 
-A key feature of the developed system is its ability to track and store historical and live data in (not only) the SQLite3 database. The mobile robot turns out to be a mobile data hub. Data stored in it can be transformed into competitive advantages by harnessing edge AI (see \cref{fig:3dreal}). Doing so adheres to the vision pursued by our overarching value-driven DTs \cite{kaigom2020value} and Metarobotics \cite{kaigom} frameworks to create a global, digital, and parallel  intelligence for robot-driven industrial and societal applications. As depicted in \cref{fig:3dreal}, we strive  to deploy e.g. collective, foundational, generative, and deep transferable Artificial Intelligence/Machine Learning techniques to support the pervasive and itinerant access to services for the completion of remote robotized applications. These include design, development, automation, maintenance, safety, and sustainability as a service. Next generation wireless communication (e.g., 6G) and holoportation, as well as decentralized and interoperating DTs of existing and prospective assets are leveraged to this end. It is worth noting that such DTs are assumed to even learn from each others to accelerate the creation of non-nominal values by attentively taking advantage of particularities, singularities, and differences \cite{kaigom}. In particular, a longitudinal analysis of the robot's business and operational data can be instrumental in creating values. These include an improved robot design and usability for citizen satisfaction (Society 5.0),  smart and efficient production and maintenance (Industry 4.0), \mbox{as well as worker well-being (Industry 5.0).} %Related DT might then learn from each other tu push back current frontiers and 
+A key feature of the developed system is its ability to track and store historical and live data in (not only) the SQLite3 database. The mobile robot turns out to be a mobile data hub. Data stored in it can be transformed into competitive advantages by harnessing edge AI (see \cref{fig:3dreal}). Doing so adheres to the vision pursued by our overarching value-driven DTs \cite{kaigom2020value} and Metarobotics \cite{kaigom} frameworks to create a global, digital, and parallel  intelligence for robot-driven industrial and societal applications. As depicted in \cref{fig:3dreal}, we strive  to deploy e.g. collective, foundational, generative, and deep transferable Artificial Intelligence$\slash$Machine Learning techniques to support the pervasive and itinerant access to services to complete remote robotized applications  \cite{kaigom}. These include design, automation, maintenance, safety, sustainability, and inclusion as a service. Next-gen wireless communication (e.g., 6G) and holoportation, as well as decentralized and interoperating DTs of existing as well as prospective assets are leveraged to this end. Such context- and goal-oriented DTs are being developed to {semantically} learn from each others to accelerate non-nominal value creation by attentively using their particularities and interdependencies on e.g. graph neural networks \cite{kaigom} (see \cref{fig:3dreal}). A longitudinal analysis of the robot's business and operational data can be instrumental in creating values. These include an improved robot design and usability for citizen satisfaction (Society 5.0),  smart and efficient production and maintenance (Industry 4.0), \mbox{as well as worker well-being (Industry 5.0).} %Related DT might then learn from each other tu push back current frontiers and 
 %This system provides a flexible and accessible platform for robot control and data monitoring. 
 %This underscores the potential of web-based interfaces in enhancing the usability and functionality of robotic systems. 
 %The use of an IP-based connection protocol further emphasizes the system's adaptability and broad accessibility. The incorporation of a database for data tracking and storage demonstrates a commitment to data-driven decision making and performance optimization. 
 \begin{figure}[t]
     \centerline{\includegraphics[width=8.9cm]{Pictures/userappbig.pdf}}
-    \caption{Backend architecture of the web app}
+    \caption{Backend architecture of the web app.}
     \label{fig:userapp}
 \end{figure}
 \subsection{Frontend}
@@ -173,7 +173,7 @@ We streamline, extend and transfer this functionality to the web interface. Nipp
 \item The app exhibits versatility in its control mechanisms. Users have the option to teleoperate the robot via a physical keyboard, provided they have one readily available. For users without  physical keyboard connection, an alternative method involves utilizing the custom “WASD” touch keys displayed within the application interface. 
 These touch keys can also be used for the robot movement. The Husky can be driven more precisely using the keyboard buttons. This is useful when, e.g., parking.
 \item Three.js is a powerful and lightweight 3D graphics library that can be served as a versatile tool for rendering digital representations of robots within web browsers \cite{threejs}. In future work a combination with Ros3djs can be considered to further implement and reflect in terms of animations the live movements of the real robot on the browser \cite{ros3djs}. For example, a blinking or lighting up of the visualized husky in the browser when the battery SoC is low. 
-As an ongoing project, we have successfully integrated a 3D model  of the Husky as part of its DT into our application as a proof of concept (see r.h.s of \cref{fig:loop}).
+As an ongoing project, we have successfully integrated a 3D model  of the Husky as part of its DT into our application as a proof of concept (see r.h.s of \cref{fig:loop}). 
 \end{itemize}
 
 \subsection{Interaction between backend and frontend}
@@ -189,11 +189,11 @@ The SoC for the battery is visualized using Plotly.js as a line chart. This proc
 These variables are utilized within HTML templates or JavaScript via Jinja, a template engine \cite{jinja}. Users can interact with the system by selecting specific days from a drop-down list. \mbox{Recorded data related to the chosen day are displayed.}
 \begin{figure}[tp]
     \centerline{\includegraphics[width=8.9cm]{Pictures/backfrontbig.pdf}}
-    \caption{Interaction between frontend and backend}
+    \caption{Interaction between frontend and backend.}
     \label{fig:backfront}
 \end{figure}
 \subsubsection{Connecting to an Open Platform Communications Unified Architecture Server}
-A pre-existing DataConnector (DC) has been specifically developed for the Husky as part of a prior project. This DC leverages the Open Platform Communication Unified Architecture \cite{opcua} (OPC-UA) standard. Through this industry-compatible connector,  ROS data from the Husky are efficiently retrieved. The retrieval process is facilitated by a client program integrated into the web application and the acquired data are persistently stored in the database. 
+A pre-existing DataConnector (DC) has been specifically developed for the Husky as part of a prior project. This DC leverages the Open Platform Communication Unified Architecture \cite{opcua} (OPC-UA) standard. Through this industry-compatible connector,  ROS data from the Husky are \textit{semantically} shared. The retrieval process is facilitated by a client program integrated into the web application and the acquired data are persistently stored in the database. 
 In the event of an OPC-UA server failure, the system is designed to continue displaying the real-time ROS \mbox{data of the Husky (\cref{fig:backfront}).}
 
 
@@ -222,28 +222,28 @@ Their placement at the screen's edge aligns with the ergonomic orientation of ha
     \caption{Control panel (mobile view with Galaxy S23) with battery soc, WebSocket status, live camera stream, virtual Joystick, speed slider, etc.}
     \label{fig:galaxycontrol}
 \end{figure}
-The 3D model route shows the visualized Husky (i.e., its  DT) as depicted in \cref{fig:3dreal}. It is possible to view the model from different angles.
-The components listed here have been tested with the most common browsers such as Chrome, Firefox or Edge in different versions and on different devices. A list of supported browser versions of the Bootstrap components is available on the Bootstrap website \cite{bsBrowsers}. 
+The 3D model route shows the visualized Husky (i.e., its URDF-based DT) as depicted in \cref{fig:3dreal} for situational awareness. The model can be viewed from different angles.
+Components listed here have been tested with the most common browsers such as Chrome, Firefox or Edge in different versions and on different devices. A list of supported browser versions of the Bootstrap components is available on the Bootstrap website \cite{bsBrowsers}. 
 \begin{figure}[htbp]
-    \centerline{\includegraphics[width=0.98\columnwidth]{Pictures/layer0.pdf}}
+    \centerline{\includegraphics[width=0.9\columnwidth]{Pictures/layer0.pdf}}
     \caption{Basic overarching idea and overall architecture following \cite{kaigom,kaigom2020value}.}
     \label{fig:3dreal}
 \end{figure}
 
 \section{Discussion}
-This project synergistically integrates a constellation of frameworks, tools, and DT to achieve optimal functionality. In contrast to the comprehensive Python web framework Django, which provides an extensive feature set \cite{django} and was employed in \cite{kapic}, Flask was chosen - a minimalist web framework that offers only fundamental functionalities. 
+This project synergistically integrates a constellation of frameworks, tools, and DTs to achieve optimal functionality. In contrast to the comprehensive Python web framework Django, which provides an extensive feature set \cite{django} and was employed in \cite{kapic}, Flask was chosen - a minimalist web framework that offers only fundamental functionalities. 
 This choice allows to selectively incorporate essential features and extensions, ensuring a streamlined and efficient self-hosted web application. 
 Analogous to the context in \cite{kapic} and \cite{dinodi}, the application incorporates a virtual joystick.
 The Husky's velocity can be modulated via a speed slider. Alternatively, teleoperation of the robot is achievable through keyboard input. Even in scenarios where a physical keyboard is absent, the mobile platform remains maneuverable using virtual keys. Particularly, the physical keyboard keys afford finer-grained control compared to the virtual and physical joystick. 
 Furthermore, consideration was given to the ergonomic arrangement of these components within the application, aligning with the natural posture observed during mobile device usage as shown in  \cref{fig:galaxycontrol}.
 As in \cite{kapic}, \cite{dinodi}, \cite{johnson} and \cite{wang}, the robot data are transmitted to the app via the Rosbridge protocol and vice versa, which constitutes bidirectional communication. Similar to \cite{johnson}, a live camera feed was also integrated leveraging the Web Video Server.
-The backend system architecture also offers the possibility to connect a specially developed OPC-UA server and client to write the Husky's ROS data to the database. In the event of database or OPC-UA server failure, critical ROS data such as the battery SoC or the engine temperatures remain accessible for real-time display (\cref{fig:backfront}).
-The visual representation of the components within the web interface is also intuitive and has been built using the responsive Bootstrap frontend toolkit. This enables users to connect to the app as independently as possible from the respective web-enabled device with a customized display.
+The backend system architecture allows for connecting a specially developed OPC-UA server and client to semantically read$\slash$write the Husky (i.e., DT) data from$\slash$to the database. In the event of database or OPC-UA server failure, critical ROS (i.e., DT) data, such as the battery SoC or the engine temperatures, remain accessible for real-time display (\cref{fig:backfront}).
+The visual representation of the components within the web interface is also intuitive and has been built using the responsive Bootstrap frontend toolkit. This enables users to connect to the app as independently and mobile as possible from individual web-enabled devices with a customized display.
 
 \section{Conclusion}
-In this work, a web-based framework that facilitates the monitoring and control of the Husky robot has been developed. A multimodal digital twin approach is involved to reflect the internal dynamics and environmental context, as well as enabling a versatile control over the motion behavior of the remote mobile robot. 
-Our framework supports devices with web connectivity, irrespective of their origin, or browser specifications. The framework integrates a robust database, enabling users to monitor and make  informed decisions from holistic real-time data over the robot. 
-Additionally, visual representations enhance the presentation and interpretation of critical parameters, \mbox{such as motor temperature and battery status.}
+In this work, a web-based framework that facilitates the remote monitoring and control of the Husky robot has been developed. A multimodal digital twin approach reflects the internal dynamics and environmental visual context, and enables a situation-aware control over the motion behavior of the remote mobile robot. 
+Our framework supports devices with web connectivity, irrespective of their origin, or browser specifications and semantic data exchange. It integrates a robust database, enabling users to monitor and make  informed decisions from  real-time information over the robot. 
+Visual cues facilitate the interpretation of critical parameters, such as motor temperature and battery status, \mbox{for a successful  remote robot guidance.}
 
 
 \begin{thebibliography}{00}
